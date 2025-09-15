@@ -11,7 +11,6 @@ import Preloader from "@/component/Preloader";
 export default function Home() {
   return (
     <>
-      <Preloader />
       <section className="bg-[#0C0414]">
         <Hero />
       </section>
