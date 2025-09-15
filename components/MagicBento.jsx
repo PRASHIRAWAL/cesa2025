@@ -462,7 +462,7 @@ const MagicBento = ({
             --background-dark: #060010;
             --white: hsl(0, 0%, 100%);
           }
-          .card-responsive { grid-template-columns: 1fr; width: 90%; margin: 0 auto; padding: 0.5rem; }
+          .card-responsive { grid-template-columns: 1fr; width: 100%; margin: 0 auto; ; }
           @media (min-width: 1024px) {
             .card-responsive { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; }
             .bento-left { grid-column: span 2; grid-row: span 2; }

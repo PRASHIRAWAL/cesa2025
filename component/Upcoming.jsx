@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Button from "./ButtonPrimary";
+import { motion } from 'framer-motion'
 
 function getTimeParts(targetDate) {
   const totalMs = Math.max(0, targetDate.getTime() - Date.now());
@@ -70,7 +71,13 @@ const Upcoming = ({
           </div>
 
           {/* Right: Image */}
-          <div className="relative w-full h-[340px] sm:h-[420px] lg:h-[620px]">
+          <motion.div
+            initial={{ y: 500, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }} 
+
+            className="relative w-full h-[340px] sm:h-[420px] lg:h-[620px]">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -78,7 +85,7 @@ const Upcoming = ({
               className="object-cover rotate-y-180 object-center select-none pointer-events-none"
               priority
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

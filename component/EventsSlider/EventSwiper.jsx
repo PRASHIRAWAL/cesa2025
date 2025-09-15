@@ -60,26 +60,20 @@ export default function EventSwiper({ events = defaultEvents }) {
           <SwiperSlide key={ev.id}>
             <div
               onClick={() => setActive(ev)}
-              className="relative w-full h-[220px] sm:h-[240px] md:h-[900px] cursor-pointer  rounded-2xl group bg-[#0b0613]"
+              className="relative  h-[220px] sm:h-[240px] md:h-[600px]  cursor-pointer  rounded-2xl group bg-[#0b0613]"
             >
               <Image
                 src={ev.image}
                 alt={ev.title}
                 height={900}
-                width={7}
-                className="absolute inset-0 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                width={700}
+                className=" object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+      
                 priority={ev.id === 1}
               />
               {/* subtle vignette without cropping */}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                <div>
-                  <div className="text-white font-heading text-lg">{ev.title}</div>
-                  <div className="text-white/80 text-xs">{ev.date} · {ev.location}</div>
-                </div>
-                <div className="text-xs px-2 py-1 rounded-lg border border-white/30 text-white/90 bg-black/30">Details</div>
-              </div>
+             
             </div>
           </SwiperSlide>
         ))}
