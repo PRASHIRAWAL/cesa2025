@@ -1,14 +1,48 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Russo_One, Space_Grotesk, MuseoModerno, Teko } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/component/Navbar";
+import Footer from "@/component/Footer";
+import Preloader from "@/component/Preloader";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const russoOne = Russo_One({
+  variable: "--font-russo-one",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400","500","600","700"],
+  display: "swap",
+});
+
+const museoModerno = MuseoModerno({
+  variable: "--font-museo-moderno",
+  subsets: ["latin"],
+  weight: ["400","500","600","700"],
+  display: "swap",
+});
+
+const teko = Teko({
+  variable: "--font-teko",
+  subsets: ["latin"],
+  weight: ["400","500","600","700"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -20,9 +54,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${geistSans.className} 
+          ${geistSans.variable} 
+          ${geistMono.variable} 
+          ${russoOne.variable} 
+          ${spaceGrotesk.variable} 
+          ${museoModerno.variable} 
+          ${teko.variable} 
+          antialiased
+        `}
       >
-        {children}
+        <Preloader/>
+        <Navbar/>
+       {children}
+       <Footer/>
       </body>
     </html>
   );
