@@ -53,19 +53,27 @@
 
 /* Font usage for elements */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), sans-serif;
+  font-family: var(--font-russo-one), sans-serif;
 }
 
+/* Paragraphs → Space Grotesk */
 p, .paragraph {
-  font-family: var(--font-paragraph), sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
 }
 
+/* Buttons → MuseoModerno */
 button, .btn, .button {
-  font-family: var(--font-button), sans-serif;
+  font-family: var(--font-museo-moderno), sans-serif;
 }
 
-.navlink, nav a {
-  font-family: var(--font-navlink), sans-serif;
+/* Nav links → Teko */
+nav a, .navlink {
+  font-family: var(--font-teko), sans-serif;
+}
+
+/* Code → Geist Mono */
+code, pre {
+  font-family: var(--font-geist-mono), monospace;
 }
 
 @utility font-heading {

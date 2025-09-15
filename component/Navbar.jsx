@@ -27,10 +27,10 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex text-white space-x-8">
-            <Link href="/" className="navlink text-lg hover:text-purple-700 transition-colors">Home</Link>
-            <Link href="/about" className="navlink text-lg hover:text-purple-700 transition-colors">About Us</Link>
-            <Link href="/team" className="navlink text-lg hover:text-purple-700 transition-colors">Team</Link>
-            <Link href="/events" className="navlink text-lg hover:text-purple-700 transition-colors">Events</Link>
+            <Link href="/" className="navlink text-2xl hover:text-purple-700 transition-colors">Home</Link>
+            <Link href="/about" className="navlink text-2xl hover:text-purple-700 transition-colors">About Us</Link>
+            <Link href="/team" className="navlink text-2xl hover:text-purple-700 transition-colors">Team</Link>
+            <Link href="/events" className="navlink text-2xl hover:text-purple-700 transition-colors">Events</Link>
           </div>
 
           {/* Mobile menu button */}
