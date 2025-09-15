@@ -1,11 +1,26 @@
+'use client'
+import AboutUs from "@/component/AboutUs";
+import Events from "@/component/Events";
+import Hero from "@/component/Hero";
+import LanyardHeads from "@/component/LanyardHeads";
+import Upcoming from "@/component/Upcoming";
 import Image from "next/image";
 
 export default function Home() {
   return (
-  <>
-  <div className="">
-    <h1 className="text-5xl font-bold">Lets start...!!!!</h1>
-  </div>
-  </>
+    <>
+      <section className="bg-[#0C0414]">
+        <Hero />
+      </section>
+      <section className="bg-[#0C0414]">
+        <AboutUs/>
+      </section>
+      <section className="bg-[#0C0414]">
+        <Events/>
+      </section>
+      <section className="bg-[#0C0414]">
+        <Upcoming/>
+      </section>
+    </>
   );
 }
