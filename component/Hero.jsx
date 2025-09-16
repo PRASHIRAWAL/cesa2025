@@ -52,12 +52,12 @@ const Hero = () => {
         muted
         playsInline
       >
-        <source src="/videos/hero-desktop.mp4" type="video/mp4" />
+        <source src="/videos/hero-desktop1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black/40 px-6 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black/20  px-6 text-center">
         {/* Heading */}
         <h1
           className="hero-heading text-white font-extrabold leading-tight"
@@ -76,14 +76,14 @@ const Hero = () => {
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 flex flex-wrap gap-4 justify-center">
+        {/* <div className="mt-6 flex flex-wrap gap-4 justify-center">
           <div className="hero-button">
             <Button text="View Event" variant="primary" route="/join" />
           </div>
           <div className="hero-button">
             <Button text="Know More" variant="secondary" route="/about" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
