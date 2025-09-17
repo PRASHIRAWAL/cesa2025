@@ -13,7 +13,6 @@
     "@react-three/drei": "^10.0.0",
     "@react-three/fiber": "^9.0.0",
     "@react-three/rapier": "^2.0.0",
-    "lightningcss": "^1.25.1",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "meshline": "^2.0.2",
