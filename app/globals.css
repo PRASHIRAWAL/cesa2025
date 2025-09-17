@@ -4,7 +4,6 @@
 @source "../component/**/*.{js,jsx,ts,tsx,mdx}";
 @source "../components/**/*.{js,jsx,ts,tsx,mdx}";
 
-
 @custom-variant dark (&:where(.dark &));
 
 @theme inline {
@@ -170,3 +169,6 @@ code, pre {
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
