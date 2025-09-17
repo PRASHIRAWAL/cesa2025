@@ -46,7 +46,7 @@ const Hero = () => {
     <div className="relative h-[90vh] w-full overflow-hidden" ref={containerRef}>
       {/* Desktop Background Video */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-[99vh] object-cover"
         autoPlay
         loop
         muted
