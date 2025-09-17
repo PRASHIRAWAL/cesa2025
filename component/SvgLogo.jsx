@@ -15,7 +15,7 @@ const SvgLogo = () => {
         gsap.set(pathref.current,{drawSVG:"0% 0% "})
 
         gsap.to((pathref.current),{
-            duration:2.5,
+            duration:3.5,
             drawSVG:"0% 100%",
             ease:"power2.inOut"
         })

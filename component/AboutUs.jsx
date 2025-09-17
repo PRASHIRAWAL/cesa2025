@@ -13,7 +13,7 @@ const AboutUs = () => {
         ease: [0.25, 1, 0.5, 1], // 👈 smooth cubic-bezier (easeOutExpo style)
       }}
 
-      className=" flex justify-center relative py-16 bg-black px-4">
+      className=" flex justify-center relative py-16 bg-[#02020A] px-4">
      {/* <div className="absolute left-0 top-[0%]  flex items-center justify-center pointer-events-none">
           <div className="rounded-full h-[100vw] w-[100vw] max-h-[600px] max-w-[600px] bg-[radial-gradient(circle,rgba(168,85,247,0.35)_0%,transparent_70%)] blur-3xl" />
         </div>
