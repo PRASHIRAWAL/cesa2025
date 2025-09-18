@@ -86,4 +86,23 @@
     .spotlight-intro-header,.spotlight-outro-header{
         padding: 2rem;
     }
+    .heading{
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+    .spotlight-images img{
+      width: min(78vw, 340px);
+      height: min(52vw, 230px);
+    }
+}
+
+/* Ultra small phones */
+@media (max-width:480px){
+  .heading{
+    font-size: 2rem;
+  }
+  .spotlight-images img{
+    width: min(88vw, 300px);
+    height: min(60vw, 200px);
+  }
 }

@@ -73,7 +73,8 @@ const EventsScrolling = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
     const isMobile = screenWidth < 1000;
-    const scatterMultiplier = isMobile ? 2.5 : 0.5;
+    // Keep desktop visuals as-is, tune only small screens
+    const scatterMultiplier = isMobile ? 1.4 : 0.5;
 
     // Start + End positions
     const startPositions = spotlightRefs.current.map(() => ({
@@ -105,7 +106,7 @@ const EventsScrolling = () => {
     ScrollTrigger.create({
       trigger: ".spotlight",
       start: "top top",
-      end: `+=${window.innerHeight * 15}px`,
+      end: `+=${window.innerHeight * (isMobile ? 10 : 15)}px`,
       pin: true,
       scrub: 1,
 onUpdate: (self) => {
@@ -113,9 +114,9 @@ onUpdate: (self) => {
 
   // 🔹 Spotlight images
   spotlightRefs.current.forEach((img, index) => {
-    const staggerDelay = index * 0.03;
-    const scaleMultiplier = isMobile ? 4 : 2;
-    const imageProgress = Math.max(0, (progress - staggerDelay) * 4);
+    const staggerDelay = index * (isMobile ? 0.02 : 0.03);
+    const scaleMultiplier = isMobile ? 2.2 : 2;
+    const imageProgress = Math.max(0, (progress - staggerDelay) * (isMobile ? 3 : 4));
 
     const start = startPositions[index];
     const end = endPositions[index];
@@ -129,7 +130,7 @@ onUpdate: (self) => {
   });
 
   // 🔹 Cover image
-  const coverProgress = Math.max(0, (progress - 0.7) * 4);
+  const coverProgress = Math.max(0, (progress - (isMobile ? 0.6 : 0.7)) * (isMobile ? 3 : 4));
   gsap.set(coverRef.current, {
     z: -1000 + 2000 * coverProgress,
     scale: Math.min(1, coverProgress * 2),
@@ -138,8 +139,8 @@ onUpdate: (self) => {
   });
 
   // 🔹 Intro heading fade-out (0.6 → 0.75)
-  if (progress >= 0.6 && progress <= 0.75) {
-    const introFade = gsap.utils.mapRange(0.6, 0.75, 1, 0, progress);
+  if (progress >= (isMobile ? 0.5 : 0.6) && progress <= (isMobile ? 0.72 : 0.75)) {
+    const introFade = gsap.utils.mapRange((isMobile ? 0.5 : 0.6), (isMobile ? 0.72 : 0.75), 1, 0, progress);
     gsap.to(introSplit.words, {
       opacity: introFade,
       y: introFade === 0 ? -20 : 0, // small lift
@@ -150,8 +151,8 @@ onUpdate: (self) => {
   }
 
   // 🔹 Outro heading fade-in (0.8 → 0.95)
-  if (progress >= 0.8 && progress <= 0.95) {
-    const outroFade = gsap.utils.mapRange(0.8, 0.95, 0, 1, progress);
+  if (progress >= (isMobile ? 0.75 : 0.8) && progress <= (isMobile ? 0.92 : 0.95)) {
+    const outroFade = gsap.utils.mapRange((isMobile ? 0.75 : 0.8), (isMobile ? 0.92 : 0.95), 0, 1, progress);
     gsap.to(outroSplit.words, {
       opacity: outroFade,
       y: outroFade === 1 ? 0 : 20, // small rise-up effect
@@ -169,9 +170,9 @@ onUpdate: (self) => {
 
   return (
     <div>
-      <section className={styles.intro}>
+      {/* <section className={styles.intro}>
         <h1 className={styles.heading}>Vision That Move Beyond The Surface</h1>
-      </section>
+      </section> */}
 
       <section className={`${styles.spotlight} spotlight`}>
         <div className={`${styles["spotlight-images"]}`}>

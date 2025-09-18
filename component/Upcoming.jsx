@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Button from "./ButtonPrimary";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 function getTimeParts(targetDate) {
   const totalMs = Math.max(0, targetDate.getTime() - Date.now());
@@ -18,10 +18,12 @@ function getTimeParts(targetDate) {
 const TimeCell = ({ value, label }) => {
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-wide text-white">
+      <div className="text-3xl sm:text-4xl lg:text-6xl font-heading tracking-wide text-white">
         {String(value).padStart(2, "0")}
       </div>
-      <div className="text-xs sm:text-sm text-white/70">{label}</div>
+      <div className="text-xs sm:text-sm lg:text-base text-white/70">
+        {label}
+      </div>
     </div>
   );
 };
@@ -47,45 +49,44 @@ const Upcoming = ({
 
   return (
     <section className="w-full bg-[#0A0711]">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-2">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text and countdown */}
-          <div className="space-y-6">
-            <h2 className="font-heading text-white text-4xl sm:text-5xl lg:text-6xl leading-tight">
+          <div className="space-y-6 text-center lg:text-left">
+            <h2 className="font-heading text-white text-3xl sm:text-5xl lg:text-6xl leading-tight">
               {title}
             </h2>
-            <p className="font-paragraph text-white/80 text-base sm:text-lg">
+            <p className="font-paragraph text-white/80 text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0">
               {subtitle}
             </p>
 
-            <div className="flex items-center gap-8 sm:gap-10 lg:gap-12 pt-2">
+            <div className="flex justify-center lg:justify-start items-center gap-6 sm:gap-10 lg:gap-12 pt-2 flex-wrap">
               <TimeCell value={time.days} label="Days" />
               <TimeCell value={time.hours} label="Hours" />
               <TimeCell value={time.minutes} label="Minutes" />
-              <TimeCell value={time.seconds} label="seconds" />
+              <TimeCell value={time.seconds} label="Seconds" />
             </div>
 
-            <div className="pt-4">
+            <div className="pt-6">
               <Button text={ctaText} route={ctaHref} />
             </div>
           </div>
 
           {/* Right: Image */}
           <motion.div
-            initial={{ y: 500, opacity: 0 }}
+            initial={{ y: 80, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-
-            className="relative w-full h-[340px] sm:h-[420px] lg:h-[620px]">
+            className="relative w-full h-[420px] sm:h-80 lg:h-[620px] flex justify-center"
+          >
             <Image
               src={imageSrc}
               alt={imageAlt}
               fill
-              className="object-cover rotate-y-180 object-center select-none pointer-events-none"
+              className="object-cover sm:object-cover rotate-y-180 object-center select-none pointer-events-none"
               priority
             />
-            
           </motion.div>
         </div>
       </div>

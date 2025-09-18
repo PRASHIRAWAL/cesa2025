@@ -1,6 +1,7 @@
 'use client'
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
@@ -483,101 +484,111 @@ const MagicBento = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-responsive grid gap-2 rounded-4xl">
           {/* Small A - Upcoming Event */}
-       {/* Event Card - HackNight */}
-<ParticleCard
-  className={`card relative w-full p-5 rounded-[20px] border border-solid ${
-    enableBorderGlow ? "card--border-glow" : ""
-  }`}
-  style={{
-    backgroundColor: "var(--background-dark)",
-    borderColor: "var(--border-color)",
-    color: "var(--white)",
-  }}
-  disableAnimations={shouldDisableAnimations}
-  particleCount={particleCount}
-  glowColor={glowColor}
-  enableTilt={true}
-  clickEffect={clickEffect}
-  enableMagnetism={enableMagnetism}
->
-  <div className="flex h-full w-full items-center justify-between gap-3">
-    <div>
-      <div className="text-white/70 text-xs uppercase tracking-wide">
-        Upcoming
-      </div>
-      <div className="text-white font-heading text-xl">HackNight 2.0</div>
-      <div className="text-white/60 text-xs">Fri, 7:00 PM · Auditorium</div>
-      <p className="text-white/70 text-sm mt-2 max-w-[220px]">
-        A 12-hour coding sprint to innovate, collaborate, and build impactful
-        projects. Open for all tech enthusiasts!
-      </p>
-    </div>
-    <button className="shrink-0 rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition">
-      Register
-    </button>
-  </div>
-</ParticleCard>
+          {/* Event Card - HackNight */}
+          <ParticleCard
+            className={`card relative w-full p-5 rounded-[20px] border border-solid ${enableBorderGlow ? "card--border-glow" : ""
+              }`}
+            style={{
+              backgroundColor: "var(--background-dark)",
+              borderColor: "var(--border-color)",
+              color: "var(--white)",
+            }}
+            disableAnimations={shouldDisableAnimations}
+            particleCount={particleCount}
+            glowColor={glowColor}
+            enableTilt={false}
+            clickEffect={clickEffect}
+            enableMagnetism={enableMagnetism}
+          >
+            <div className="flex h-full w-full items-center justify-between gap-3">
+              <div>
+                <div className="text-white/70 text-xs uppercase tracking-wide">
+                  Upcoming
+                </div>
+                <div className="text-white font-heading text-xl">HackNight 2.0</div>
+                <div className="text-white/60 text-xs">Fri, 7:00 PM · Auditorium</div>
+                <p className="text-white/70 text-sm mt-2 max-w-[220px]">
+                  A 12-hour coding sprint to innovate, collaborate, and build impactful
+                  projects. Open for all tech enthusiasts!
+                </p>
+              </div>
+              <button className="shrink-0 rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition">
+                Register
+              </button>
+            </div>
+          </ParticleCard>
 
-{/* Testimonial Card */}
-<ParticleCard
-  className={`card relative w-full p-5 rounded-[20px] border border-solid ${
-    enableBorderGlow ? "card--border-glow" : ""
-  }`}
-  style={{
-    backgroundColor: "var(--background-dark)",
-    borderColor: "var(--border-color)",
-    color: "var(--white)",
-  }}
-  disableAnimations={shouldDisableAnimations}
-  particleCount={particleCount}
-  glowColor={glowColor}
-  enableTilt={true}
-  clickEffect={clickEffect}
-  enableMagnetism={enableMagnetism}
->
-  <div className="h-full w-full flex flex-col justify-between">
-    <p className="text-white/80 text-sm leading-6">
-      “HackNight pushed me out of my comfort zone. I found an amazing team,
-      learned React in one night, and built a working prototype. Truly an
-      unforgettable experience!”
-    </p>
-    <div className="text-white/60 text-xs mt-3">— Aisha, 2nd Year CSE</div>
-  </div>
-</ParticleCard>
+          {/* Features Card (replaces testimonial) */}
+          <ParticleCard
+            className={`card relative w-full p-5 rounded-[20px] border border-solid ${enableBorderGlow ? "card--border-glow" : ""}`}
+            style={{
+              backgroundColor: "var(--background-dark)",
+              borderColor: "var(--border-color)",
+              color: "var(--white)",
+            }}
+            disableAnimations={shouldDisableAnimations}
+            particleCount={particleCount}
+            glowColor={glowColor}
+            enableTilt={true}
+            clickEffect={clickEffect}
+            enableMagnetism={enableMagnetism}
+          >
+            <div className="h-full w-full grid grid-cols-2 gap-3">
+              <div className="flex items-start gap-2">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">⚡</span>
+                <div>
+                  <div className="text-white text-sm font-semibold">Fast-paced</div>
+                  <div className="text-white/60 text-xs">Hands-on events and sprints</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">🎯</span>
+                <div>
+                  <div className="text-white text-sm font-semibold">Outcome-first</div>
+                  <div className="text-white/60 text-xs">Build real, useful projects</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">🤝</span>
+                <div>
+                  <div className="text-white text-sm font-semibold">Community</div>
+                  <div className="text-white/60 text-xs">Peer-led learning culture</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">🛠️</span>
+                <div>
+                  <div className="text-white text-sm font-semibold">Tooling</div>
+                  <div className="text-white/60 text-xs">Modern stacks & workflows</div>
+                </div>
+              </div>
+            </div>
+          </ParticleCard>
 
 
-          {/* Left Big - About area */}
-       <ParticleCard
-  className={`card bento-left relative w-full p-6 rounded-[20px] border border-solid ${
-    enableBorderGlow ? "card--border-glow" : ""
-  }`}
-  style={{
-    backgroundColor: "var(--background-dark)",
-    borderColor: "var(--border-color)",
-    color: "var(--white)",
-  }}
-  disableAnimations={shouldDisableAnimations}
-  particleCount={particleCount}
-  glowColor={glowColor}
-  enableTilt={true}
-  clickEffect={clickEffect}
-  enableMagnetism={enableMagnetism}
->
-  <div className="h-full w-full flex flex-col justify-between">
-    <div className="text-white/70 text-sm uppercase tracking-wide">
-      About Us
-    </div>
-    <div className="text-white font-heading text-2xl mb-2">
-      Innovating. Building. Elevating.
-    </div>
-    <p className="text-white/70 text-sm leading-6">
-      We are a community of creators, developers, and dreamers driven by the
-      passion to learn, build, and share knowledge. From hackathons to workshops,
-      we create opportunities that empower students to turn ideas into impactful
-      solutions.
-    </p>
-  </div>
-</ParticleCard>
+          {/* Left Big - Group Picture */}
+          <ParticleCard
+            className={`card bento-left relative w-full p-6 rounded-[20px] border border-solid ${enableBorderGlow ? "card--border-glow" : ""
+              }`}
+            style={{
+              backgroundColor: "var(--background-dark)",
+              borderColor: "var(--border-color)",
+              color: "var(--white)",
+            }}
+            disableAnimations={shouldDisableAnimations}
+            particleCount={particleCount}
+            glowColor={glowColor}
+            enableTilt={true}
+            clickEffect={clickEffect}
+            enableMagnetism={enableMagnetism}
+          >
+            <div  className='w-full h-[60vh] md:h-full '>
+              <Image
+              src={'/group.jpg'}
+              fill
+              />
+            </div>
+          </ParticleCard>
 
 
           {/* Right Big - Placeholder */}
@@ -591,103 +602,106 @@ const MagicBento = ({
             clickEffect={clickEffect}
             enableMagnetism={enableMagnetism}
           >
-            <div className="h-full w-full flex items-center justify-center">
-              <div className="text-white/70">Add images or a swiper here</div>
+            <div className="h-full w-full flex flex-col justify-center items-center">
+              <div className="text-white/90 font-heading text-2xl uppercase tracking-wide">
+                About Us
+              </div>
+            
+              <p className="text-white/70 text-[1rem] leading-6 max-w-md text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptate molestias dolor facilis tenetur, voluptatem, veritatis aliquid nesciunt eius repudiandae quidem possimus porro vitae quae temporibus minus non ad sed?
+                Dolorum minus odio, assumenda molestiae temporibus, voluptas facere corporis cupiditate harum quo, hic quasi veritatis natus ipsa beatae placeat ullam. Atque ea similique laborum reiciendis commodi necessitatibus aut cumque in.
+                Quasi adipisci laudantium dignissimos, veniam molestias consequuntur voluptate error accusantium animi nemo asperiores debitis earum natus doloribus voluptates mollitia iste, obcaecati eveniet labore, pariatur molestiae! Cupiditate minus blanditiis deleniti amet!
+              </p>
             </div>
           </ParticleCard>
 
           {/* Small C - Stat */}
- {/* Small C - Stat */}
-<ParticleCard
-  className={`card relative w-full p-5 rounded-[20px] border border-solid ${
-    enableBorderGlow ? "card--border-glow" : ""
-  }`}
-  style={{
-    backgroundColor: "var(--background-dark)",
-    borderColor: "var(--border-color)",
-    color: "var(--white)",
-  }}
-  disableAnimations={shouldDisableAnimations}
-  particleCount={particleCount}
-  glowColor={glowColor}
-  enableTilt={true}
-  clickEffect={clickEffect}
-  enableMagnetism={enableMagnetism}
->
-  <div className="h-full w-full flex items-center justify-between">
-    {/* Stat Info */}
-    <div>
-      <div className="text-white/70 text-xs uppercase tracking-wide">
-        Projects
-      </div>
-      <div className="text-white text-3xl font-bold">48</div>
-      <p className="text-white/60 text-xs mt-1">
-        Built by our members this year
-      </p>
-    </div>
+          {/* Small C - Stat */}
+          <ParticleCard
+            className={`card relative w-full p-5 rounded-[20px] border border-solid ${enableBorderGlow ? "card--border-glow" : ""
+              }`}
+            style={{
+              backgroundColor: "var(--background-dark)",
+              borderColor: "var(--border-color)",
+              color: "var(--white)",
+            }}
+            disableAnimations={shouldDisableAnimations}
+            particleCount={particleCount}
+            glowColor={glowColor}
+            enableTilt={true}
+            clickEffect={clickEffect}
+            enableMagnetism={enableMagnetism}
+          >
+            <div className="h-full w-full flex items-center justify-between">
+              {/* Stat Info */}
+              <div>
+                <div className="text-white/70 text-xs uppercase tracking-wide">
+                  Projects
+                </div>
+                <div className="text-white text-3xl font-bold">48</div>
+                <p className="text-white/60 text-xs mt-1">
+                  Built by our members this year
+                </p>
+              </div>
 
-    {/* CTA Button */}
-    <button className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] hover:text-white transition">
-      View →
-    </button>
-  </div>
-</ParticleCard>
+              {/* CTA Button */}
+              <button className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] hover:text-white transition">
+                View →
+              </button>
+            </div>
+          </ParticleCard>
 
 
           {/* Small D - CTA */}
           {/* Social Links Card */}
-<ParticleCard
-  className={`card relative w-full p-5 rounded-[20px] border border-solid ${
-    enableBorderGlow ? "card--border-glow" : ""
-  }`}
-  style={{
-    backgroundColor: "var(--background-dark)",
-    borderColor: "var(--border-color)",
-    color: "var(--white)",
-  }}
-  disableAnimations={shouldDisableAnimations}
-  particleCount={particleCount}
-  glowColor={glowColor}
-  enableTilt={true}
-  clickEffect={clickEffect}
-  enableMagnetism={enableMagnetism}
->
-  <div className="h-full w-full flex flex-col gap-4">
-    <div>
-      <div className="text-white/70 text-xs uppercase tracking-wide">
-        Connect with us
-      </div>
-      <div className="text-white font-heading text-xl">Follow CESA</div>
-    </div>
+          <ParticleCard
+            className={`card relative w-full p-5 rounded-[20px] border border-solid ${enableBorderGlow ? "card--border-glow" : ""
+              }`}
+            style={{
+              backgroundColor: "var(--background-dark)",
+              borderColor: "var(--border-color)",
+              color: "var(--white)",
+            }}
+            disableAnimations={shouldDisableAnimations}
+            particleCount={particleCount}
+            glowColor={glowColor}
+            enableTilt={true}
+            clickEffect={clickEffect}
+            enableMagnetism={enableMagnetism}
+          >
+            <div className="h-full w-full flex flex-col gap-4">
+              <div>
+                <div className="text-white/70 text-xs uppercase tracking-wide">
+                  Connect with us
+                </div>
+                <div className="text-white font-heading text-xl">Follow CESA</div>
+              </div>
 
-    <div className="flex items-center gap-3">
-      <a
-        href="https://twitter.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="rounded-lg bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition"
-      >
-        Twitter
-      </a>
-      <a
-        href="https://instagram.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="rounded-lg bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition"
-      >
-        Instagram
-      </a>
-      <a
-        href="https://linkedin.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="rounded-lg bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition"
-      >
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</ParticleCard>
+              <div className="grid grid-cols-3 gap-3">
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
+                  <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
+                  <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
+                    <span className="block text-lg">𝕏</span>
+                    <span className="block text-[10px] text-white/60">Twitter</span>
+                  </div>
+                </a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
+                  <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
+                  <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
+                    <span className="block text-lg">◎</span>
+                    <span className="block text-[10px] text-white/60">Instagram</span>
+                  </div>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
+                  <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
+                  <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
+                    <span className="block text-lg">in</span>
+                    <span className="block text-[10px] text-white/60">LinkedIn</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </ParticleCard>
 
         </div>
       </BentoCardGrid>
