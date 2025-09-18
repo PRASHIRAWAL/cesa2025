@@ -75,7 +75,7 @@ const Upcoming = ({
             initial={{ y: 500, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }} 
+            viewport={{ once: true }}
 
             className="relative w-full h-[340px] sm:h-[420px] lg:h-[620px]">
             <Image
@@ -85,6 +85,7 @@ const Upcoming = ({
               className="object-cover rotate-y-180 object-center select-none pointer-events-none"
               priority
             />
+            
           </motion.div>
         </div>
       </div>
