@@ -57,7 +57,7 @@ const Hero = () => {
       </video>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black/20  px-6 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black/40  px-6 text-center">
         {/* Heading */}
         <h1
           className="hero-heading text-white font-extrabold leading-tight"

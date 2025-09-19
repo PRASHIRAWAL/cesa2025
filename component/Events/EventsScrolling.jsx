@@ -188,15 +188,15 @@ onUpdate: (self) => {
         </div>
 
         <div ref={coverRef} className={styles["spotlight-cover-img"]}>
-          <img src="/e2.jpg" alt="cover" />
+          <img src="/Group.jpg" alt="cover" className="opacity-40" />
         </div>
 
         <div ref={introHeaderRef} className={styles["spotlight-intro-header"]}>
-          <h1 className={styles.heading}>When Motion and Stillness Collide in Layers</h1>
+          <h1 className={styles.heading}>When Innovation Collides With Imagination</h1>
         </div>
 
         <div ref={outroHeaderRef} className={styles["spotlight-outro-header"]}>
-          <h1 className={styles.heading}>What Follows Is Not Stillness but Reverberations</h1>
+          <h1 className={styles.heading}>What Emerges Are Moments That Resonate</h1>
         </div>
       </section>
 

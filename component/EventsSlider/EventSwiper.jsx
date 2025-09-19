@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image"; // ✅ FIX: import Next.js Image
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./styles.css";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 
 const defaultEvents = [
   {
@@ -36,6 +37,15 @@ const defaultEvents = [
     description:
       "Build a full-stack project in a day. Teams will pitch and demo in the evening.",
   },
+  {
+    id: 4,
+    title: "CyberSec Summit",
+    date: "Nov 18, 9:00 AM",
+    location: "Main Hall",
+    image: "/Poster/CyberSec.jpg",
+    description:
+      "Explore cybersecurity trends, threat detection, and ethical hacking practices.",
+  },
 ];
 
 export default function EventSwiper({ events = defaultEvents }) {
@@ -46,6 +56,7 @@ export default function EventSwiper({ events = defaultEvents }) {
       <Swiper
         slidesPerView={1}
         spaceBetween={12}
+        navigation={true}
         pagination={{ clickable: true }}
         breakpoints={{
           640: { slidesPerView: 1.2, spaceBetween: 14 },
@@ -53,27 +64,28 @@ export default function EventSwiper({ events = defaultEvents }) {
           1024: { slidesPerView: 3, spaceBetween: 24 },
           1280: { slidesPerView: 3, spaceBetween: 30 },
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {events.map((ev) => (
           <SwiperSlide key={ev.id}>
             <div
               onClick={() => setActive(ev)}
-              className="relative  h-[220px] sm:h-[240px] md:h-[600px]  cursor-pointer  rounded-2xl group bg-[#0b0613]"
+              className="relative border border-[#CF9EFF]/40 overflow-hidden 
+                         h-[520px] sm:h-[340px] md:h-[500px] cursor-pointer 
+                         rounded-2xl group bg-[#0b0613] 
+                         shadow-[0_0_25px_rgba(168,85,247,0.4)] 
+                         backdrop-blur-sm transition-all hover:shadow-[0_0_40px_rgba(168,85,247,0.6)]"
             >
               <Image
                 src={ev.image}
                 alt={ev.title}
                 height={900}
                 width={700}
-                className=" object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-      
+                className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                 priority={ev.id === 1}
               />
-              {/* subtle vignette without cropping */}
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-             
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
           </SwiperSlide>
         ))}
@@ -86,33 +98,51 @@ export default function EventSwiper({ events = defaultEvents }) {
             className="absolute inset-0 bg-black/70"
             onClick={() => setActive(null)}
           />
-          <div className="relative z-[61] w-[90%] max-w-2xl rounded-2xl border border-[#A78BFA]/30 bg-[#0C0414] text-white shadow-2xl overflow-hidden">
-            <div className="relative w-full max-h-[60vh] flex items-center justify-center bg-[#0b0613]">
-              <Image
-                src={active.image}
-                alt={active.title}
-                width={1280}
-                height={720}
-                className="w-full h-full object-contain"
-              />
-              <button
-                onClick={() => setActive(null)}
-                className="absolute top-3 right-3 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 px-3 py-1 text-sm"
-              >
-                Close
-              </button>
-            </div>
-            <div className="p-5 space-y-2">
-              <h3 className="font-heading text-2xl">{active.title}</h3>
-              <div className="text-white/80 text-sm">
-                {active.date} · {active.location}
+
+          {/* Content box */}
+          <div className="relative z-[61] w-[95%] md:w-[80%] lg:w-[70%] 
+                          rounded-2xl border border-[#A78BFA]/30 
+                          bg-[#0C0414] text-white shadow-2xl 
+                          overflow-hidden max-h-[90vh]">
+            <div className="flex flex-col md:flex-row h-full">
+              {/* Poster Left */}
+              <div className="relative w-full md:w-1/2 flex items-center justify-center 
+                              bg-[#0b0613] p-3 md:p-5 
+                              shadow-[inset_0_0_40px_rgba(168,85,247,0.3)] 
+                              backdrop-blur-sm">
+                <Image
+                  src={active.image}
+                  alt={active.title}
+                  width={1280}
+                  height={720}
+                  className="w-full h-auto max-h-[60vh] md:max-h-[80vh] object-contain rounded-xl"
+                />
+                <button
+                  onClick={() => setActive(null)}
+                  className="absolute top-3 right-3 rounded-full bg-black/60 hover:bg-black/80 
+                             border border-white/20 px-3 py-1 text-sm"
+                >
+                  Close
+                </button>
               </div>
-              <p className="text-white/80 text-sm leading-6">
-                {active.description}
-              </p>
-              <div className="pt-3 flex gap-3">
-                <button className="rounded-xl bg-[#1C1528] border border-[#A78BFA]/30 px-4 py-2 text-sm hover:bg[#261a36]">Register</button>
-                <button className="rounded-xl bg-transparent border border-[#A78BFA]/40 px-4 py-2 text-sm hover:bg-white/10">Add to Calendar</button>
+
+              {/* Details Right */}
+              <div className="flex-1 p-5 md:p-8 overflow-y-auto">
+                <h3 className="font-heading text-2xl md:text-3xl">{active.title}</h3>
+                <div className="text-white/80 text-sm md:text-base mt-1">
+                  {active.date} · {active.location}
+                </div>
+                <p className="text-white/80 text-sm md:text-base leading-6 mt-4">
+                  {active.description}
+                </p>
+                <div className="pt-6 flex gap-4">
+                  <button className="rounded-xl bg-[#1C1528] border border-[#A78BFA]/30 px-5 py-2 text-sm md:text-base hover:bg-[#261a36]">
+                    Register
+                  </button>
+                  <button className="rounded-xl bg-transparent border border-[#A78BFA]/40 px-5 py-2 text-sm md:text-base hover:bg-white/10">
+                    Add to Calendar
+                  </button>
+                </div>
               </div>
             </div>
           </div>
