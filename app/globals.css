@@ -124,6 +124,11 @@ code, pre {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Custom About Us effects */
+  --shadow: 0 15px 35px rgba(207, 158, 255, 0.15), 0 5px 15px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --glow: 0 0 20px rgba(207, 158, 255, 0.3);
 }
 
 .dark {

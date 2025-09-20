@@ -28,9 +28,17 @@ const AboutUs = () => {
         
 
         {/* Foreground Card */}
-<div 
+        <div 
   className="relative -top-16 z-10 bg-[#1A1025] border-2 border-[#CF9EFF] rounded-3xl" 
-  style={{ boxShadow: '0 0 100px 50px rgba(168,85,247,0.35)' }}>
+  style={{ 
+    boxShadow: '20px 0 85px rgba(207, 158, 255, 0.3), -20px 0 85px rgba(207, 158, 255, 0.3), 0 0 100px rgba(207, 158, 255, 0.2)'
+,
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    filter: 'drop-shadow(0 0 20px rgba(207, 158, 255, 0.3))'
+  }}
+>
+
+
 
           <MagicBento
             textAutoHide={true}
