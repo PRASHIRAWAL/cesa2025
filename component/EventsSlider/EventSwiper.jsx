@@ -81,7 +81,7 @@ export default function EventSwiper({ events = defaultEvents }) {
                 src={ev.image}
                 alt={ev.title}
                 height={900}
-                width={700}
+                width={900}
                 className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                 priority={ev.id === 1}
               />

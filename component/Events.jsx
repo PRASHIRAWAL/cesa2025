@@ -50,7 +50,7 @@ const Events = () => {
   const [activeEvent, setActiveEvent] = useState(null);
 
   return (
-    <div className="min-h-screen w-full relative flex flex-col items-center bg-[#12001a] px-4 py-12 sm:py-16">
+    <div className="min-h-screen w-full relative flex flex-col items-center bg-[#12001a] md:px-4 py-12 sm:py-16">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading text-white mb-10 text-center">
         Events
       </h1>

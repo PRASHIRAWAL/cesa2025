@@ -54,19 +54,55 @@
     background: #c084fc;
     opacity: 1;
   }
+
+  /* Navigation arrows styling */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #a855f7 !important; /* Purple color */
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    margin-top: -25px !important; /* Adjust vertical position */
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    color: #c084fc !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* Position adjustments */
+  .swiper-button-next {
+    right: 5px !important; /* Distance from right edge */
+  }
+  
+  .swiper-button-prev {
+    left: 5px !important; /* Distance from left edge */
+  }
+
+  /* Make arrows smaller on mobile */
+  @media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 40px !important;
+      height: 40px !important;
+      margin-top: -20px !important;
+    }
+  }
   
   /* Responsive adjustments */
   @media (max-width: 639px) {
     .swiper-slide {
       font-size: 16px;
-      padding: 12px;
+      
     }
   }
   
   @media (min-width: 640px) and (max-width: 767px) {
     .swiper-slide {
       font-size: 16px;
-      padding: 14px;
+   
     }
   }
   

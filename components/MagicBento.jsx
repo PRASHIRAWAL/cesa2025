@@ -582,10 +582,11 @@ const MagicBento = ({
             clickEffect={clickEffect}
             enableMagnetism={enableMagnetism}
           >
-            <div  className='w-full h-[60vh] md:h-full '>
+            <div  className='w-full h-[30vh] md:h-full '>
               <Image
               src={'/group.jpg'}
               fill
+              className='md:object-contain object-cover'
               />
             </div>
           </ParticleCard>

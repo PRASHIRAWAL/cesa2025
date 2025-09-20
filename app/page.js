@@ -8,8 +8,17 @@ import Upcoming from "@/component/Upcoming";
 import Image from "next/image";
 import Preloader from "@/component/Preloader";
 import EventsScrolling from "@/component/Events/EventsScrolling";
+import Lenis from "lenis";
 
 export default function Home() {
+  const lenis = new Lenis({
+  autoRaf: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+  console.log(e);
+});
   return (
     <>
       <section className="bg-[#02020A]">
