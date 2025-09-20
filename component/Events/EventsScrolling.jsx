@@ -188,7 +188,7 @@ onUpdate: (self) => {
         </div>
 
         <div ref={coverRef} className={styles["spotlight-cover-img"]}>
-          <img src="/Group.jpg" alt="cover" className="opacity-40" />
+          <img src="/group.jpg" alt="cover" className="opacity-40" />
         </div>
 
         <div ref={introHeaderRef} className={styles["spotlight-intro-header"]}>
