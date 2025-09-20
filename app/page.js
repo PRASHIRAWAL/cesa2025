@@ -1,41 +1,51 @@
 'use client'
+
+import { useEffect } from 'react';
 import AboutUs from "@/component/AboutUs";
-import Events from "@/component/Events";
-import Hero from "@/component/Hero";
-import LanyardHeads from "@/component/LanyardHeads";
-import SvgLogo from "@/component/SvgLogo";
-import Upcoming from "@/component/Upcoming";
-import Image from "next/image";
-import Preloader from "@/component/Preloader";
 import EventsScrolling from "@/component/Events/EventsScrolling";
-import Lenis from "lenis";
+import Hero from "@/component/Hero";
+import Upcoming from "@/component/Upcoming";
+import Lenis from 'lenis';
 
 export default function Home() {
-  const lenis = new Lenis({
-  autoRaf: true,
-});
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
 
-// Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-  console.log(e);
-});
+    const onScroll = (e) => {
+      console.log(e);
+    };
+
+    lenis.on('scroll', onScroll);
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Cleanup
+    return () => {
+      lenis.off('scroll', onScroll);
+    };
+  }, []);
+
   return (
     <>
-      <section className="bg-[#02020A]">
+      <section id="home" className="bg-[#02020A]">
         <Hero />
       </section>
       <section id="about" className="bg-[#02020A]">
-        <AboutUs/>
+        <AboutUs />
       </section>
-     
-       <section className="bg-[#0C0414]">
-        <EventsScrolling/>
+      <section className="bg-[#0C0414]">
+        <EventsScrolling />
       </section>
       <section id="events" className="bg-[#0C0414]">
-        <Upcoming/>
+        <Upcoming />
       </section>
-      
-  
     </>
   );
 }
