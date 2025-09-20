@@ -2,6 +2,8 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
+import { Code, Handshake, Target, Zap } from 'lucide-react';
+
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
@@ -535,28 +537,28 @@ const MagicBento = ({
           >
             <div className="h-full w-full grid grid-cols-2 gap-3">
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">⚡</span>
+                <Zap size={34} className='text-purple-400'/>
                 <div>
                   <div className="text-white text-sm font-semibold">Fast-paced</div>
                   <div className="text-white/60 text-xs">Hands-on events and sprints</div>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">🎯</span>
+               <Target size={34} className='text-blue-400'/>
                 <div>
                   <div className="text-white text-sm font-semibold">Outcome-first</div>
                   <div className="text-white/60 text-xs">Build real, useful projects</div>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">🤝</span>
+                <Handshake size={34} className='text-blue-400'/>
                 <div>
                   <div className="text-white text-sm font-semibold">Community</div>
                   <div className="text-white/60 text-xs">Peer-led learning culture</div>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#12091d] border border-[#392e4e] text-white/80">🛠️</span>
+               <Code size={34} className='text-purple-400'/>
                 <div>
                   <div className="text-white text-sm font-semibold">Tooling</div>
                   <div className="text-white/60 text-xs">Modern stacks & workflows</div>
@@ -582,11 +584,11 @@ const MagicBento = ({
             clickEffect={clickEffect}
             enableMagnetism={enableMagnetism}
           >
-            <div  className='w-full h-[30vh] md:h-full '>
+            <div className='w-full h-[30vh] md:h-full '>
               <Image
-              src={'/group.jpg'}
-              fill
-              className='md:object-contain object-cover'
+                src={'/group.jpg'}
+                fill
+                className='md:object-contain object-cover'
               />
             </div>
           </ParticleCard>
@@ -595,7 +597,11 @@ const MagicBento = ({
           {/* Right Big - Placeholder */}
           <ParticleCard
             className={`card bento-right relative w-full p-6 rounded-[20px] border border-solid ${enableBorderGlow ? 'card--border-glow' : ''}`}
-            style={{ backgroundColor: 'var(--background-dark)', borderColor: 'var(--border-color)', color: 'var(--white)' }}
+            style={{
+              backgroundColor: 'var(--background-dark)',
+              borderColor: 'var(--border-color)',
+              color: 'var(--white)',
+            }}
             disableAnimations={shouldDisableAnimations}
             particleCount={particleCount}
             glowColor={glowColor}
@@ -604,17 +610,24 @@ const MagicBento = ({
             enableMagnetism={enableMagnetism}
           >
             <div className="h-full w-full flex flex-col justify-center items-center">
-              <div className="text-white/90 font-heading text-2xl uppercase tracking-wide">
+              <div className="text-white/90 font-heading text-2xl uppercase tracking-wide mb-4">
                 About Us
               </div>
-            
-              <p className="text-white/70 text-[1rem] leading-6 max-w-md text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptate molestias dolor facilis tenetur, voluptatem, veritatis aliquid nesciunt eius repudiandae quidem possimus porro vitae quae temporibus minus non ad sed?
-                Dolorum minus odio, assumenda molestiae temporibus, voluptas facere corporis cupiditate harum quo, hic quasi veritatis natus ipsa beatae placeat ullam. Atque ea similique laborum reiciendis commodi necessitatibus aut cumque in.
-                Quasi adipisci laudantium dignissimos, veniam molestias consequuntur voluptate error accusantium animi nemo asperiores debitis earum natus doloribus voluptates mollitia iste, obcaecati eveniet labore, pariatur molestiae! Cupiditate minus blanditiis deleniti amet!
+
+              <p className="text-white/70 text-[0.99rem] leading-6 ">
+                The Computer Engineering Student’s Association (CESA) is the official student body of the Computer Engineering Department at VIT. We are dedicated to fostering a culture of learning, innovation, and collaboration, providing students with opportunities to grow both technically and personally.
+       
+                Our core domain lies in Artificial Intelligence and Machine Learning (AI/ML), where we encourage students to explore the future of technology through hands-on learning and practical applications. Alongside this, we also engage in a wide spectrum of computer engineering fields to ensure holistic growth.
+    
+                Our flagship event, <strong>Plethora</strong>, is a celebration of knowledge and creativity featuring coding competitions, AI/ML challenges, workshops by industry experts, technical showcases, and mini hackathons. It serves as a platform for students to sharpen their skills, showcase innovation, and build solutions that make an impact.
+       
+                Guided by our motto — <em>Code. Compete. Conquer.</em> — CESA inspires students to push boundaries, embrace challenges, and emerge as confident innovators.
+           
+                Join us and be a part of our journey towards shaping the next generation of tech leaders.
               </p>
             </div>
           </ParticleCard>
+
 
           {/* Small C - Stat */}
           {/* Small C - Stat */}

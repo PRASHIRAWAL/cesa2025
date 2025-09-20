@@ -34,18 +34,22 @@ const defaultEvents = [
     date: "Nov 2, 11:00 AM",
     location: "Innovation Hub",
     image: "/Poster/ByteFortune.jpg",
-    description:
-      "Build a full-stack project in a day. Teams will pitch and demo in the evening.",
-  },
-  {
-    id: 4,
-    title: "CyberSec Summit",
-    date: "Nov 18, 9:00 AM",
-    location: "Main Hall",
-    image: "/Poster/CyberSec.jpg",
-    description:
-      "Explore cybersecurity trends, threat detection, and ethical hacking practices.",
-  },
+    description: `
+Round 1: Spin the Wheel
+Participants get 15 minutes to solve as many coding problems as possible. Each spin decides the problem to attempt. After solving, they must mark it complete before spinning again.
+
+Round 2: Flip the Cards
+Top 40% teams qualify. Each team picks a card revealing their coding challenge. After a set time, they may use points to purchase a Power Card, which could be an advantage (bonus points, extra time, hints) or a disadvantage (restrictions, handicaps) based purely on luck.
+
+Rules & Judging:
+- Submit complete, functional code for every problem.
+- Problems follow predefined I/O specifications.
+- Submissions are evaluated against test cases.
+- Only correct, properly submitted solutions count toward scoring.
+`
+  }
+
+
 ];
 
 export default function EventSwiper({ events = defaultEvents }) {
