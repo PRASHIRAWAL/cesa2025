@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles.css";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 const defaultEvents = [
   {
@@ -48,6 +48,44 @@ Rules & Judging:
     description:
       "Hands-on sessions on LLMs and computer vision with mentors from industry and academia.",
   },
+  {
+    id: 4,
+    title: "Web Dev Jam",
+    date: "Nov 2, 11:00 AM",
+    location: "Innovation Hub",
+    image: "/Poster/ByteFortune.jpg",
+    description: `
+Round 1: Spin the Wheel
+Participants get 15 minutes to solve as many coding problems as possible. Each spin decides the problem to attempt. After solving, they must mark it complete before spinning again.
+
+Round 2: Flip the Cards
+Top 40% teams qualify. Each team picks a card revealing their coding challenge. After a set time, they may use points to purchase a Power Card, which could be an advantage (bonus points, extra time, hints) or a disadvantage (restrictions, handicaps) based purely on luck.
+
+Rules & Judging:
+- Submit complete, functional code for every problem.
+- Problems follow predefined I/O specifications.
+- Submissions are evaluated against test cases.
+- Only correct, properly submitted solutions count toward scoring.
+`
+  },
+  {
+    id: 5,
+    title: "HackNight 2.0",
+    date: "Fri, 7:00 PM",
+    location: "Auditorium",
+    image: "/Poster/Hackbuild.jpg",
+    description:
+      "A 12-hour coding sprint to innovate, collaborate, and build impactful projects. Open for all tech enthusiasts!",
+  },
+  {
+    id: 6,
+    title: "AI Bootcamp",
+    date: "Oct 12, 10:00 AM",
+    location: "Lab 3",
+    image: "/Poster/Alumni.jpg",
+    description:
+      "Hands-on sessions on LLMs and computer vision with mentors from industry and academia.",
+  },
  
 
 
@@ -59,8 +97,11 @@ export default function EventSwiper({ events = defaultEvents }) {
   return (
     <>
       <Swiper
+        loop={true}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         slidesPerView={1}
         spaceBetween={12}
+        centeredSlides={true}
         navigation={true}
         pagination={{ clickable: true }}
         breakpoints={{
@@ -69,7 +110,7 @@ export default function EventSwiper({ events = defaultEvents }) {
           1024: { slidesPerView: 3, spaceBetween: 24 },
           1280: { slidesPerView: 3, spaceBetween: 30 },
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
         {events.map((ev) => (
