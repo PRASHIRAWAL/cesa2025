@@ -11,24 +11,6 @@ import { Pagination, Navigation } from "swiper/modules";
 
 const defaultEvents = [
   {
-    id: 1,
-    title: "HackNight 2.0",
-    date: "Fri, 7:00 PM",
-    location: "Auditorium",
-    image: "/Poster/Hackbuild.jpg",
-    description:
-      "A 12-hour coding sprint to innovate, collaborate, and build impactful projects. Open for all tech enthusiasts!",
-  },
-  {
-    id: 2,
-    title: "AI Bootcamp",
-    date: "Oct 12, 10:00 AM",
-    location: "Lab 3",
-    image: "/Poster/Alumni.jpg",
-    description:
-      "Hands-on sessions on LLMs and computer vision with mentors from industry and academia.",
-  },
-  {
     id: 3,
     title: "Web Dev Jam",
     date: "Nov 2, 11:00 AM",
@@ -47,7 +29,26 @@ Rules & Judging:
 - Submissions are evaluated against test cases.
 - Only correct, properly submitted solutions count toward scoring.
 `
-  }
+  },
+  {
+    id: 1,
+    title: "HackNight 2.0",
+    date: "Fri, 7:00 PM",
+    location: "Auditorium",
+    image: "/Poster/Hackbuild.jpg",
+    description:
+      "A 12-hour coding sprint to innovate, collaborate, and build impactful projects. Open for all tech enthusiasts!",
+  },
+  {
+    id: 2,
+    title: "AI Bootcamp",
+    date: "Oct 12, 10:00 AM",
+    location: "Lab 3",
+    image: "/Poster/Alumni.jpg",
+    description:
+      "Hands-on sessions on LLMs and computer vision with mentors from industry and academia.",
+  },
+ 
 
 
 ];
@@ -75,11 +76,14 @@ export default function EventSwiper({ events = defaultEvents }) {
           <SwiperSlide key={ev.id}>
             <div
               onClick={() => setActive(ev)}
-              className="relative border border-[#CF9EFF]/40 overflow-hidden 
+              className="relative border-2 border-[#CF9EFF] overflow-hidden 
                          h-[520px] sm:h-[340px] md:h-[500px] cursor-pointer 
-                         rounded-2xl group bg-[#0b0613] 
-                         shadow-[0_0_25px_rgba(168,85,247,0.4)] 
-                         backdrop-blur-sm transition-all hover:shadow-[0_0_40px_rgba(168,85,247,0.6)]"
+                         rounded-3xl group bg-[#0b0613] 
+                         backdrop-blur-sm transition-all duration-300"
+              style={{
+                boxShadow: '0 0 20px rgba(207, 158, 255, 0.15), 0 0 40px rgba(207, 158, 255, 0.1)',
+                filter: 'drop-shadow(0 0 10px rgba(207, 158, 255, 0.2))'
+              }}
             >
               <Image
                 src={ev.image}
@@ -105,14 +109,18 @@ export default function EventSwiper({ events = defaultEvents }) {
 
           {/* Content box */}
           <div className="relative z-[61] w-[95%] md:w-[80%] lg:w-[70%] 
-                          rounded-2xl border border-[#A78BFA]/30 
-                          bg-[#0C0414] text-white shadow-2xl 
-                          overflow-hidden max-h-[90vh]">
+                          rounded-3xl border-2 border-[#CF9EFF] 
+                          bg-[#0C0414] text-white 
+                          overflow-hidden max-h-[90vh]"
+               style={{
+                 boxShadow: '0 0 25px rgba(207, 158, 255, 0.2), 0 0 50px rgba(207, 158, 255, 0.1)',
+                 filter: 'drop-shadow(0 0 15px rgba(207, 158, 255, 0.25))'
+               }}>
             <div className="flex flex-col md:flex-row h-full">
               {/* Poster Left */}
               <div className="relative w-full md:w-1/2 flex items-center justify-center 
                               bg-[#0b0613] p-3 md:p-5 
-                              shadow-[inset_0_0_40px_rgba(168,85,247,0.3)] 
+                              shadow-[inset_0_0_40px_rgba(207,158,255,0.2)] 
                               backdrop-blur-sm">
                 <Image
                   src={active.image}
@@ -136,14 +144,35 @@ export default function EventSwiper({ events = defaultEvents }) {
                 <div className="text-white/80 text-sm md:text-base mt-1">
                   {active.date} · {active.location}
                 </div>
-                <p className="text-white/80 text-sm md:text-base leading-6 mt-4">
-                  {active.description}
-                </p>
+                <div className="text-white/80 text-sm md:text-base leading-6 mt-4">
+                  {active.description.split('\n').map((line, index) => {
+                    if (line.trim() === '') return <br key={index} />;
+                    if (line.includes('Round') || line.includes('Rules')) {
+                      return (
+                        <h4 key={index} className="font-heading text-[#CF9EFF] text-base md:text-lg mt-4 mb-2">
+                          {line}
+                        </h4>
+                      );
+                    }
+                    if (line.startsWith('-')) {
+                      return (
+                        <li key={index} className="ml-4 mb-1">
+                          {line}
+                        </li>
+                      );
+                    }
+                    return (
+                      <p key={index} className="mb-2">
+                        {line}
+                      </p>
+                    );
+                  })}
+                </div>
                 <div className="pt-6 flex gap-4">
-                  <button className="rounded-xl bg-[#1C1528] border border-[#A78BFA]/30 px-5 py-2 text-sm md:text-base hover:bg-[#261a36]">
+                  <button className="rounded-xl bg-[#1C1528] border border-[#CF9EFF]/30 px-5 py-2 text-sm md:text-base hover:bg-[#261a36] hover:border-[#CF9EFF]/60 hover:text-[#CF9EFF] transition-all duration-300">
                     Register
                   </button>
-                  <button className="rounded-xl bg-transparent border border-[#A78BFA]/40 px-5 py-2 text-sm md:text-base hover:bg-white/10">
+                  <button className="rounded-xl bg-transparent border border-[#CF9EFF]/40 px-5 py-2 text-sm md:text-base hover:bg-[#CF9EFF]/10 hover:border-[#CF9EFF]/60 hover:text-[#CF9EFF] transition-all duration-300">
                     Add to Calendar
                   </button>
                 </div>

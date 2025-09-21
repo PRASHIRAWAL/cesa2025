@@ -72,6 +72,17 @@ const Footer = () => {
             <a href="#" aria-label="Twitter" className="hover:text-white">Twitter</a>
             <a href="#" aria-label="Instagram" className="hover:text-white">Instagram</a>
             <a href="#" aria-label="GitHub" className="hover:text-white">GitHub</a>
+            <Link 
+              href="/developers" 
+              className="relative px-3 py-1 rounded-full bg-gradient-to-r from-[#CF9EFF]/10 to-[#A855F7]/10 border border-[#CF9EFF]/30 hover:border-[#CF9EFF] text-[#CF9EFF] hover:text-white transition-all duration-300 font-paragraph text-sm"
+              style={{
+                boxShadow: '0 0 15px rgba(207, 158, 255, 0.2)',
+                textShadow: '0 0 10px rgba(207, 158, 255, 0.3)'
+              }}
+            >
+              Developers
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#CF9EFF]/5 to-[#A855F7]/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+            </Link>
           </div>
         </div>
       </div>
