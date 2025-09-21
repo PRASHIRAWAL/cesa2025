@@ -8,16 +8,16 @@ const Developers = () => {
   const developers = [
     {
       name: "Rohit Soneji",
-      role: "Frontend Developer",
+      role: "Full Stack Developer & UI Designer",
       image: "/api/placeholder/300/300",
-      linkedin: "https://linkedin.com/in/rohit-soneji6",
+      linkedin: "https://www.linkedin.com/in/rohit-soneji-9483a5344/",
       github: "https://github.com/SwiftByte6"
     },
     {
-      name: "Sarah Chen",
-      role: "Full Stack Developer", 
+      name: "Atharva Sheramkar",
+      role: "Frontend Developer", 
       image: "/api/placeholder/300/300",
-      linkedin: "https://linkedin.com/in/sarahchen",
+      linkedin: "https://www.linkedin.com/in/atharva-sheramkar-93a930351/",
       github: "https://github.com/sarahchen"
     },
     {
