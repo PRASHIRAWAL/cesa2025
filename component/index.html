@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #D2D2D2;
+
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            pointer-events: none;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"></div>
+            <div class="item" style="--position: 2"></div>
+            <div class="item" style="--position: 3"></div>
+            <div class="item" style="--position: 4"></div>
+            <div class="item" style="--position: 5"></div>
+            <div class="item" style="--position: 6"></div>
+            <div class="item" style="--position: 7"></div>
+            <div class="item" style="--position: 8"></div>
+            <div class="item" style="--position: 9"></div>
+            <div class="item" style="--position: 10"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

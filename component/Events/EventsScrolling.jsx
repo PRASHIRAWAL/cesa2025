@@ -6,6 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import styles from "./EventsScrolling.module.css";
 import Events from "../Events";
+import Banner from "../Banner";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -201,7 +202,7 @@ onUpdate: (self) => {
       </section>
 
       <section className={styles.outro}>
-        <Events/>
+        <Banner />
       </section>
     </div>
   );

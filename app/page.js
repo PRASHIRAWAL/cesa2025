@@ -6,6 +6,7 @@ import EventsScrolling from "@/component/Events/EventsScrolling";
 import Hero from "@/component/Hero";
 import Upcoming from "@/component/Upcoming";
 import Lenis from 'lenis';
+import Banner from '@/component/Banner';
 
 export default function Home() {
   useEffect(() => {
