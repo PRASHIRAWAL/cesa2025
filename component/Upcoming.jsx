@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Button from "./ButtonPrimary";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function getTimeParts(targetDate) {
   const totalMs = Math.max(0, targetDate.getTime() - Date.now());
@@ -30,10 +31,10 @@ const TimeCell = ({ value, label }) => {
 
 const Upcoming = ({
   title = "Next Major Event",
-  subtitle = "Hacktech 2025 - The biggest Hackathon of the year",
+  subtitle = "AI with Intent",
   ctaText = "Reserve Your Spot",
   ctaHref = "#",
-  target = "2025-12-01T00:00:00Z",
+  target = "2025-09-27T11:00:00",
   imageSrc = "/Hand.png",
   imageAlt = "Energy hand",
 }) => {
@@ -48,7 +49,7 @@ const Upcoming = ({
   }, [targetDate]);
 
   return (
-    <section className="w-full bg-[#0A0711]">
+    <section id="upcoming" className="w-full bg-[#0A0711]">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text and countdown */}
@@ -68,7 +69,9 @@ const Upcoming = ({
             </div>
 
             <div className="pt-6">
-              <Button text={ctaText} route={ctaHref} />
+              <Link href="https://forms.gle/vwrFZ2TM6qLDkPPJ7" target="_blank">
+                <Button text={ctaText} />
+              </Link>
             </div>
           </div>
 

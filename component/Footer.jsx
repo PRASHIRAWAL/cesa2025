@@ -44,34 +44,35 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter / CTA */}
+          {/* Social Links */}
           <div className="space-y-3">
-            <h4 className="text-white/80 font-semibold">Stay in the loop</h4>
-            <p className="font-paragraph text-white/70">
-              Get updates about upcoming events and announcements.
-            </p>
-            <form className="flex items-stretch gap-2 max-w-md">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full rounded-2xl bg-[#1C1528] text-white placeholder-white/40 border border-[#A78BFA]/30 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-              <button
-                type="submit"
-                className="rounded-2xl px-5 bg-gradient-to-r from-[#1C1528] to-[#2A1F3D] text-white border border-[#A78BFA]/30 hover:from-[#2A1F3D] hover:to-[#3B1E65] focus:ring-2 focus:ring-purple-500"
-              >
-                Subscribe
-              </button>
-            </form>
+            <h4 className="text-white/80 font-semibold">Follow us</h4>
+            <ul className="space-y-2 text-white/70 font-paragraph">
+              <li>
+                <a href="https://www.linkedin.com/company/cesa-vit/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@cesavit153" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  YouTube
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/cesa.vit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  Instagram
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/60 text-sm font-paragraph">© {new Date().getFullYear()} CESA. All rights reserved.</p>
           <div className="flex items-center gap-4 text-white/70">
-            <a href="#" aria-label="Twitter" className="hover:text-white">Twitter</a>
-            <a href="#" aria-label="Instagram" className="hover:text-white">Instagram</a>
-            <a href="#" aria-label="GitHub" className="hover:text-white">GitHub</a>
+            <a href="https://www.linkedin.com/company/cesa-vit/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white">LinkedIn</a>
+            <a href="https://www.youtube.com/@cesavit153" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-white">YouTube</a>
+            <a href="https://www.instagram.com/cesa.vit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white">Instagram</a>
             <Link 
               href="/developers" 
               className="relative px-3 py-1 rounded-full bg-gradient-to-r from-[#CF9EFF]/10 to-[#A855F7]/10 border border-[#CF9EFF]/30 hover:border-[#CF9EFF] text-[#CF9EFF] hover:text-white transition-all duration-300 font-paragraph text-sm"

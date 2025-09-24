@@ -202,7 +202,7 @@ onUpdate: (self) => {
       </section>
 
       <section className={styles.outro}>
-        <Banner />
+        <Events />
       </section>
     </div>
   );

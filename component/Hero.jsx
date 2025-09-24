@@ -4,9 +4,11 @@ import React, { useRef } from "react"
 import Button from "./ButtonPrimary"
 import { gsap } from "gsap"
 import { useGSAP } from "@gsap/react"
+import { useRouter } from "next/navigation"
 
 const Hero = () => {
   const containerRef = useRef(null)
+  const router=useRouter();
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
@@ -76,14 +78,27 @@ const Hero = () => {
         </p>
 
         {/* Buttons */}
-        {/* <div className="mt-6 flex flex-wrap gap-4 justify-center">
+        <div className="mt-6 flex flex-wrap gap-4 justify-center">
           <div className="hero-button">
-            <Button text="View Event" variant="primary" route="/join" />
+            <Button
+              text="View Current Event"
+              variant="primary"
+              onClick={() => {
+                const el = document.getElementById('upcoming')
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
+            />
           </div>
           <div className="hero-button">
-            <Button text="Know More" variant="secondary" route="/about" />
+            <Button
+              text="View Team"
+              variant="secondary"
+              onClick={() => {
+                router.push('/team')
+              }}
+            />
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   )

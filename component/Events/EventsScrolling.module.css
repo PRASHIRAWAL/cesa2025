@@ -13,7 +13,7 @@
   line-height: 0.9;
 }
 
-.intro,.outro,.spotlight{
+.intro,.spotlight{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +23,17 @@
     width: 100vw;
     height: 100svh;
     padding: 2rem;
+    overflow: hidden;
+}
+
+.outro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100svh;
+  
     overflow: hidden;
 }
 

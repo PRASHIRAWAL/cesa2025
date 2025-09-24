@@ -52,13 +52,17 @@ const Navbar = () => {
               Events
               <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#CF9EFF] to-[#A855F7] group-hover:w-full transition-all duration-300"></div>
             </a>
+            <Link href="/team" className="navlink text-2xl text-white/80 hover:text-[#CF9EFF] transition-all duration-300 cursor-pointer relative group">
+              Team
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#CF9EFF] to-[#A855F7] group-hover:w-full transition-all duration-300"></div>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setOpen(!open)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-purple-700 focus:outline-none focus:bg-purple-700"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white  focus:outline-none "
               aria-label="Toggle menu"
             >
               <svg className="h-9 w-9" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -77,9 +81,10 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden bg-black/95 backdrop-blur-md border border-white/10 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
-            <a href="#home" className="navlink block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#CF9EFF]/20 hover:text-[#CF9EFF] cursor-pointer transition-all duration-300" onClick={() => setOpen(false)}>Home</a>
-            <a href="#about" className="navlink block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#CF9EFF]/20 hover:text-[#CF9EFF] cursor-pointer transition-all duration-300" onClick={() => setOpen(false)}>About Us</a>
-            <a href="#events" className="navlink block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#CF9EFF]/20 hover:text-[#CF9EFF] cursor-pointer transition-all duration-300" onClick={() => setOpen(false)}>Events</a>
+            <a href="#home" className="navlink block px-3 py-2 rounded-md text-3xl font-medium text-white hover:bg-[#CF9EFF]/20 hover:text-[#CF9EFF] cursor-pointer transition-all duration-300" onClick={() => setOpen(false)}>Home</a>
+            <a href="#about" className="navlink block px-3 py-2 rounded-md text-3xl font-medium text-white hover:bg-[#CF9EFF]/20 hover:text-[#CF9EFF] cursor-pointer transition-all duration-300" onClick={() => setOpen(false)}>About Us</a>
+            <a href="#events" className="navlink block px-3 py-2 rounded-md text-3xl font-medium text-white hover:bg-[#CF9EFF]/20 hover:text-[#CF9EFF] cursor-pointer transition-all duration-300" onClick={() => setOpen(false)}>Events</a>
+            <Link href="/team" className="navlink block px-3 py-2 rounded-md text-3xl font-medium text-white hover:bg-[#CF9EFF]/20 hover:text-[#CF9EFF] cursor-pointer transition-all duration-300" onClick={() => setOpen(false)}>Team</Link>
           </div>
         </div>
       )}

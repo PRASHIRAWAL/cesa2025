@@ -8,7 +8,7 @@ const AboutUs = () => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
-        delay: 5.3,
+        delay: 0.3,
         duration: 1,             // 👈 smooth duration
         ease: [0.25, 1, 0.5, 1], // 👈 smooth cubic-bezier (easeOutExpo style)
       }}
