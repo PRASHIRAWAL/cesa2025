@@ -513,9 +513,14 @@ const MagicBento = ({
                   Discover how Generative AI, LLMs, and real-world applications are reshaping industries and careers in this exclusive session with Laxmikant Tiwari, IIT Kharagpur alumnus and AI expert with 6+ years of experience.
                 </p>
               </div>
-              <button className="shrink-0 rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition">
+              <a
+                href="https://forms.gle/vwrFZ2TM6qLDkPPJ7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition"
+              >
                 Register
-              </button>
+              </a>
             </div>
           </ParticleCard>
 

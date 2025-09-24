@@ -177,7 +177,7 @@ export default function EventSwiper({ events = defaultEvents }) {
           <div className="relative z-[61] w-[95%] md:w-[80%] lg:w-[70%] 
                           rounded-3xl border-2 border-[#CF9EFF] 
                           bg-[#0C0414] text-white 
-                          overflow-y-auto md:overflow-hidden max-h-[90vh]"
+                          overflow-y-auto max-h-[90vh]"
                style={{
                  boxShadow: '0 0 25px rgba(207, 158, 255, 0.2), 0 0 50px rgba(207, 158, 255, 0.1)',
                  filter: 'drop-shadow(0 0 15px rgba(207, 158, 255, 0.25))',
@@ -214,12 +214,16 @@ export default function EventSwiper({ events = defaultEvents }) {
                   {renderDescription(active.description)}
                 </div>
                 <div className="pt-6 flex gap-4">
-                  <button className="rounded-xl bg-[#1C1528] border border-[#CF9EFF]/30 px-5 py-2 text-sm md:text-base hover:bg-[#261a36] hover:border-[#CF9EFF]/60 hover:text-[#CF9EFF] transition-all duration-300">
-                    Register
-                  </button>
-                  <button className="rounded-xl bg-transparent border border-[#CF9EFF]/40 px-5 py-2 text-sm md:text-base hover:bg-[#CF9EFF]/10 hover:border-[#CF9EFF]/60 hover:text-[#CF9EFF] transition-all duration-300">
-                    Add to Calendar
-                  </button>
+                  {(active?.title?.toLowerCase().includes('ai') || active?.image?.toLowerCase().includes('aiintent')) && (
+                    <a
+                      href="https://forms.gle/vwrFZ2TM6qLDkPPJ7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-xl bg-[#1C1528] border border-[#CF9EFF]/30 px-5 py-2 text-sm md:text-base hover:bg-[#261a36] hover:border-[#CF9EFF]/60 hover:text-[#CF9EFF] transition-all duration-300"
+                    >
+                      Register
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

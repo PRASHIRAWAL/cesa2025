@@ -30,10 +30,10 @@ const TimeCell = ({ value, label }) => {
 };
 
 const Upcoming = ({
-  title = "Next Major Event",
-  subtitle = "AI with Intent",
-  ctaText = "Reserve Your Spot",
-  ctaHref = "#",
+  title = "AI with Intent",
+  subtitle = "Discover Generative AI and real-world applications with industry expert Laxmikant Tiwari",
+  ctaText = "Register for AI with Intent",
+  ctaHref = "https://forms.gle/vwrFZ2TM6qLDkPPJ7",
   target = "2025-09-27T11:00:00",
   imageSrc = "/Hand.png",
   imageAlt = "Energy hand",
@@ -69,7 +69,7 @@ const Upcoming = ({
             </div>
 
             <div className="pt-6">
-              <Link href="https://forms.gle/vwrFZ2TM6qLDkPPJ7" target="_blank">
+              <Link href={ctaHref} target="_blank">
                 <Button text={ctaText} />
               </Link>
             </div>
