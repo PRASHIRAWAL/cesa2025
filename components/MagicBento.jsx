@@ -507,11 +507,10 @@ const MagicBento = ({
                 <div className="text-white/70 text-xs uppercase tracking-wide">
                   Upcoming
                 </div>
-                <div className="text-white font-heading text-xl">HackNight 2.0</div>
-                <div className="text-white/60 text-xs">Fri, 7:00 PM · Auditorium</div>
+                <div className="text-white font-heading text-xl">AI with Intent</div>
+                <div className="text-white/60 text-xs">Sat, 11:00 AM · Microsoft Teams</div>
                 <p className="text-white/70 text-sm mt-2 max-w-[220px]">
-                  A 12-hour coding sprint to innovate, collaborate, and build impactful
-                  projects. Open for all tech enthusiasts!
+                  Discover how Generative AI, LLMs, and real-world applications are reshaping industries and careers in this exclusive session with Laxmikant Tiwari, IIT Kharagpur alumnus and AI expert with 6+ years of experience.
                 </p>
               </div>
               <button className="shrink-0 rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition">
@@ -615,15 +614,11 @@ const MagicBento = ({
               </div>
 
               <p className="text-white/70 text-[0.99rem] leading-6 ">
-                The Computer Engineering Student’s Association (CESA) is the official student body of the Computer Engineering Department at VIT. We are dedicated to fostering a culture of learning, innovation, and collaboration, providing students with opportunities to grow both technically and personally.
-       
-                Our core domain lies in Artificial Intelligence and Machine Learning (AI/ML), where we encourage students to explore the future of technology through hands-on learning and practical applications. Alongside this, we also engage in a wide spectrum of computer engineering fields to ensure holistic growth.
-    
-                Our flagship event, <strong>Plethora</strong>, is a celebration of knowledge and creativity featuring coding competitions, AI/ML challenges, workshops by industry experts, technical showcases, and mini hackathons. It serves as a platform for students to sharpen their skills, showcase innovation, and build solutions that make an impact.
-       
-                Guided by our motto — <em>Code. Compete. Conquer.</em> — CESA inspires students to push boundaries, embrace challenges, and emerge as confident innovators.
-           
-                Join us and be a part of our journey towards shaping the next generation of tech leaders.
+                The Computer Engineering Student’s Association (CESA) is the official body of the Computer Engineering Department at VIT. Focused on AI/ML and core computing domains, we create opportunities for students to learn, innovate, and collaborate.
+
+                Our flagship event, Plethora, brings together coding competitions, AI/ML challenges, workshops, and hackathons that empowers students to showcase skills and build impactful solutions.
+
+                Guided by our motto "Code. Compete. Conquer." we strive to shape the next generation of tech leaders.
               </p>
             </div>
           </ParticleCard>
@@ -650,18 +645,18 @@ const MagicBento = ({
               {/* Stat Info */}
               <div>
                 <div className="text-white/70 text-xs uppercase tracking-wide">
-                  Projects
+                  Events 
                 </div>
                 <div className="text-white text-3xl font-bold">48</div>
                 <p className="text-white/60 text-xs mt-1">
-                  Built by our members this year
+                  Conducted by CESA this year
                 </p>
               </div>
 
               {/* CTA Button */}
-              <button className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] hover:text-white transition">
-                View →
-              </button>
+            <a href="#events" className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] hover:text-white transition">
+              View →
+            </a>
             </div>
           </ParticleCard>
 
@@ -692,21 +687,23 @@ const MagicBento = ({
               </div>
 
               <div className="grid grid-cols-3 gap-3">
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
-                  <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
-                  <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
-                    <span className="block text-lg">𝕏</span>
-                    <span className="block text-[10px] text-white/60">Twitter</span>
-                  </div>
-                </a>
-                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
+                <a href="https://www.instagram.com/cesa.vit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
                   <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
                     <span className="block text-lg">◎</span>
                     <span className="block text-[10px] text-white/60">Instagram</span>
                   </div>
                 </a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
+                <a href="https://www.youtube.com/@cesavit153" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
+                  <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
+                  <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
+                    <svg className="block mx-auto h-6 w-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                    </svg>
+                    <span className="block text-[10px] text-white/60">Youtube</span>
+                  </div>
+                </a>
+                <a href="https://www.linkedin.com/company/cesa-vit/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
                   <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
                     <span className="block text-lg">in</span>
