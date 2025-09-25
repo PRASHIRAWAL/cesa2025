@@ -34,7 +34,7 @@ const Upcoming = ({
   subtitle = "Discover Generative AI and real-world applications with industry expert Laxmikant Tiwari",
   ctaText = "Register for AI with Intent",
   ctaHref = "https://forms.gle/vwrFZ2TM6qLDkPPJ7",
-  target = "2025-09-27T11:00:00",
+  target = "2025-09-27T17:00:00",
   imageSrc = "/Hand.png",
   imageAlt = "Energy hand",
 }) => {
@@ -49,7 +49,7 @@ const Upcoming = ({
   }, [targetDate]);
 
   return (
-    <section id="upcoming" className="w-full bg-[#0A0711]">
+    <section  className="w-full bg-[#0A0711]">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text and countdown */}

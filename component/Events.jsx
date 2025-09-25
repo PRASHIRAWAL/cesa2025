@@ -9,7 +9,7 @@ import Upcoming from "./Upcoming";
 const Events = () => {
 
   return (
-    <div className="min-h-screen w-full relative flex flex-col items-center  md:px-4 py-12 sm:py-16">
+    <div id="events" className="min-h-screen w-full relative flex flex-col items-center  md:px-4 py-12 sm:py-16">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading text-white mb-10 text-center">
         Events
       </h1>

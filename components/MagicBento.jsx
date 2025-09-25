@@ -2,7 +2,7 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
-import { Code, Handshake, Target, Zap } from 'lucide-react';
+import { Code, Handshake, Target, Zap, Instagram, Youtube, Linkedin } from 'lucide-react';
 
 
 const DEFAULT_PARTICLE_COUNT = 12;
@@ -509,7 +509,7 @@ const MagicBento = ({
                 </div>
                 <div className="text-white font-heading text-xl">AI with Intent</div>
                 <div className="text-white/60 text-xs">Sat, 11:00 AM · Microsoft Teams</div>
-                <p className="text-white/70 text-sm mt-2 max-w-[220px]">
+                <p className="text-white/70 text-sm p-1 line-clamp-3  mt-2 max-w-[240px]">
                   Discover how Generative AI, LLMs, and real-world applications are reshaping industries and careers in this exclusive session with Laxmikant Tiwari, IIT Kharagpur alumnus and AI expert with 6+ years of experience.
                 </p>
               </div>
@@ -571,35 +571,7 @@ const MagicBento = ({
             </div>
           </ParticleCard>
 
-
-          {/* Left Big - Group Picture */}
-          <ParticleCard
-            className={`card bento-left relative w-full p-6 rounded-[20px] border border-solid ${enableBorderGlow ? "card--border-glow" : ""
-              }`}
-            style={{
-              backgroundColor: "var(--background-dark)",
-              borderColor: "var(--border-color)",
-              color: "var(--white)",
-            }}
-            disableAnimations={shouldDisableAnimations}
-            particleCount={particleCount}
-            glowColor={glowColor}
-            enableTilt={true}
-            clickEffect={clickEffect}
-            enableMagnetism={enableMagnetism}
-          >
-            <div className='w-full h-[30vh] md:h-full '>
-              <Image
-                src={'/group.jpg'}
-                fill
-                className='md:object-contain object-cover'
-              />
-            </div>
-          </ParticleCard>
-
-
-          {/* Right Big - Placeholder */}
-          <ParticleCard
+            <ParticleCard
             className={`card bento-right relative w-full p-6 rounded-[20px] border border-solid ${enableBorderGlow ? 'card--border-glow' : ''}`}
             style={{
               backgroundColor: 'var(--background-dark)',
@@ -627,6 +599,34 @@ const MagicBento = ({
               </p>
             </div>
           </ParticleCard>
+          {/* Rigjht Big - Group Picture */}
+          <ParticleCard
+            className={`card bento-left relative w-full p-6 rounded-[20px] border border-solid ${enableBorderGlow ? "card--border-glow" : ""
+              }`}
+            style={{
+              backgroundColor: "var(--background-dark)",
+              borderColor: "var(--border-color)",
+              color: "var(--white)",
+            }}
+            disableAnimations={shouldDisableAnimations}
+            particleCount={particleCount}
+            glowColor={glowColor}
+            enableTilt={true}
+            clickEffect={clickEffect}
+            enableMagnetism={enableMagnetism}
+          >
+            <div className='w-full h-[30vh] md:h-full '>
+              <Image
+                src={'/group.jpg'}
+                fill
+                className='md:object-contain object-cover'
+              />
+            </div>
+          </ParticleCard>
+
+
+          {/* left Big - Placeholder */}
+          
 
 
           {/* Small C - Stat */}
@@ -695,24 +695,22 @@ const MagicBento = ({
                 <a href="https://www.instagram.com/cesa.vit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
                   <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
-                    <span className="block text-lg">◎</span>
-                    <span className="block text-[10px] text-white/60">Instagram</span>
+                    <Instagram size={20} className="block mx-auto text-pink-400" />
+                    <span className="block text-[10px] text-white/60 mt-1">Instagram</span>
                   </div>
                 </a>
                 <a href="https://www.youtube.com/@cesavit153" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
                   <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
-                    <svg className="block mx-auto h-6 w-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                    </svg>
-                    <span className="block text-[10px] text-white/60">Youtube</span>
+                    <Youtube size={20} className="block mx-auto text-red-400" />
+                    <span className="block text-[10px] text-white/60 mt-1">Youtube</span>
                   </div>
                 </a>
                 <a href="https://www.linkedin.com/company/cesa-vit/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-br from-[#1e0f2b] to-transparent opacity-0 group-hover:opacity-100 transition" />
                   <div className="rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-3 text-center text-white/80 group-hover:bg-[#1e0f2b] transition">
-                    <span className="block text-lg">in</span>
-                    <span className="block text-[10px] text-white/60">LinkedIn</span>
+                    <Linkedin size={20} className="block mx-auto text-blue-400" />
+                    <span className="block text-[10px] text-white/60 mt-1">LinkedIn</span>
                   </div>
                 </a>
               </div>

@@ -13,7 +13,7 @@ const defaultEvents = [
      {
     id: 4,
     title: "",
-    date: "Sep 27, 11:00 AM-1.00 PM",
+    date: "Sep 27, 5:00 PM - 7.00 PM",
     location: "Online",
     image: "/Poster/AiIntent.jpg",
     description:
@@ -23,33 +23,33 @@ Our flagship event, Plethora, brings together coding competitions, AI/ML challen
 
 Guided by our motto — Code. Compete. Conquer. — we strive to shape the next generation of tech leaders.`,
   },
-  {
-    id: 3,
-    title: "ByteFOrtune",
-    date: "Sep 30, 3:00 PM",
-    location: "Lab 1",
-    image: "/Poster/ByteFortune.jpg",
-    description:
-      `Round 1: Spin the Wheel
-Participants get 15 minutes to solve as many coding problems as possible. Each spin decides the problem to attempt. After solving, they must mark it complete before spinning again.
+//   {
+//     id: 3,
+//     title: "ByteFOrtune",
+//     date: "Sep 30, 3:00 PM",
+//     location: "Lab 1",
+//     image: "/Poster/ByteFortune.jpg",
+//     description:
+//       `Round 1: Spin the Wheel
+// Participants get 15 minutes to solve as many coding problems as possible. Each spin decides the problem to attempt. After solving, they must mark it complete before spinning again.
 
-Round 2: Flip the Cards
-Top 40% teams qualify. Each team picks a card revealing their coding challenge. After a set time, they may use points to purchase a Power Card, which could be an advantage (bonus points, extra time, hints) or a disadvantage (restrictions, handicaps) based purely on luck.
+// Round 2: Flip the Cards
+// Top 40% teams qualify. Each team picks a card revealing their coding challenge. After a set time, they may use points to purchase a Power Card, which could be an advantage (bonus points, extra time, hints) or a disadvantage (restrictions, handicaps) based purely on luck.
 
-Rules & Judging
+// Rules & Judging
 
-Submit complete, functional code for every problem.
+// Submit complete, functional code for every problem.
 
-Problems follow predefined I/O specifications.
+// Problems follow predefined I/O specifications.
 
-Submissions are evaluated against test cases.
+// Submissions are evaluated against test cases.
 
-Only correct, properly submitted solutions count toward scoring.`,
-  },
+// Only correct, properly submitted solutions count toward scoring.`,
+//   },
   {
     id: 1,
     title: "Hackbuilt",
-    date: "Fri, 7:00 PM",
+    date: "",
     location: "Auditorium",
     image: "/Poster/Hackbuild.jpg",
     description:
@@ -58,8 +58,8 @@ Only correct, properly submitted solutions count toward scoring.`,
   {
     id: 2,
     title: "Alumini",
-    date: "Oct 12, 10:00 AM",
-    location: "Lab 3",
+    date: "Aug 16, 11:00 AM - 1.00 PM",
+    location: "Online",
     image: "/Poster/Alumni.jpg",
     description:
       `Alumni Unplugged is an exclusive podcast conducted by CESA in collaboration with GDG VIT and CSI-VIT, streamed live on YouTube. The event is designed to bridge the gap between college life and the professional world by featuring inspiring alumni who share their journeys, challenges, and success stories.
