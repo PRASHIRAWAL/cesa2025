@@ -17,11 +17,9 @@ const defaultEvents = [
     location: "Online",
     image: "/Poster/AiIntent.jpg",
     description:
-      `The Computer Engineering Student’s Association (CESA) is the official body of the Computer Engineering Department at VIT. Focused on AI/ML and core computing domains, we create opportunities for students to learn, innovate, and collaborate.
+      `Generative AI is revolutionizing how we create, design, and solve problems — driving smarter solutions and opening new career paths. This session will explore the future of AI, real-world applications of LLMs and NLP, and how autonomy and adaptability are reshaping industries.
 
-Our flagship event, Plethora, brings together coding competitions, AI/ML challenges, workshops, and hackathons — empowering students to showcase skills and build impactful solutions.
-
-Guided by our motto — Code. Compete. Conquer. — we strive to shape the next generation of tech leaders.`,
+The talk will be led by Laxmikant Tiwari who is the Co-Founder of MBreath, IIT Kharagpur alumnus, and Senior Manager at Linedata, with 6+ years of expertise in AI and Data Science. Learn from his journey and gain insights into building impactful careers in AI.`,
   },
   {
     id: 3,
