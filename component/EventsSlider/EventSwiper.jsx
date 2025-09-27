@@ -55,7 +55,7 @@ The talk will be led by Laxmikant Tiwari who is the Co-Founder of MBreath, IIT K
   },
   {
     id: 2,
-    title: "Alumini",
+    title: "Alumini Unplugged",
     date: "Aug 16, 11:00 AM - 1.00 PM",
     location: "Online",
     image: "/Poster/Alumni.jpg",
