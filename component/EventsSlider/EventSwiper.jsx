@@ -24,8 +24,8 @@ The talk will be led by Laxmikant Tiwari who is the Co-Founder of MBreath, IIT K
    {
      id: 3,
      title: "ByteFOrtune",
-     date: "Sep 30, 3:00 PM",
-     location: "Lab 1",
+     date: "Sep 30, 4:00 PM",
+     location: "M312 and M313",
      image: "/Poster/ByteFortune.jpg",
      description:
        `Round 1: Spin the Wheel
