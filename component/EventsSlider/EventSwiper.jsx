@@ -21,29 +21,29 @@ const defaultEvents = [
 
 The talk will be led by Laxmikant Tiwari who is the Co-Founder of MBreath, IIT Kharagpur alumnus, and Senior Manager at Linedata, with 6+ years of expertise in AI and Data Science. Learn from his journey and gain insights into building impactful careers in AI.`,
   },
-//   {
-//     id: 3,
-//     title: "ByteFOrtune",
-//     date: "Sep 30, 3:00 PM",
-//     location: "Lab 1",
-//     image: "/Poster/ByteFortune.jpg",
-//     description:
-//       `Round 1: Spin the Wheel
-// Participants get 15 minutes to solve as many coding problems as possible. Each spin decides the problem to attempt. After solving, they must mark it complete before spinning again.
+   {
+     id: 3,
+     title: "ByteFOrtune",
+     date: "Sep 30, 3:00 PM",
+     location: "Lab 1",
+     image: "/Poster/ByteFortune.jpg",
+     description:
+       `Round 1: Spin the Wheel
+ Participants get 15 minutes to solve as many coding problems as possible. Each spin decides the problem to attempt. After solving, they must mark it complete before spinning again.
 
-// Round 2: Flip the Cards
-// Top 40% teams qualify. Each team picks a card revealing their coding challenge. After a set time, they may use points to purchase a Power Card, which could be an advantage (bonus points, extra time, hints) or a disadvantage (restrictions, handicaps) based purely on luck.
+ Round 2: Flip the Cards
+ Top 40% teams qualify. Each team picks a card revealing their coding challenge. After a set time, they may use points to purchase a Power Card, which could be an advantage (bonus points, extra time, hints) or a disadvantage (restrictions, handicaps) based purely on luck.
 
-// Rules & Judging
+ Rules & Judging
 
-// Submit complete, functional code for every problem.
+ Submit complete, functional code for every problem.
 
-// Problems follow predefined I/O specifications.
+ Problems follow predefined I/O specifications.
 
-// Submissions are evaluated against test cases.
+ Submissions are evaluated against test cases.
 
-// Only correct, properly submitted solutions count toward scoring.`,
-//   },
+ Only correct, properly submitted solutions count toward scoring.`,
+   },
   {
     id: 1,
     title: "Hackbuilt",
