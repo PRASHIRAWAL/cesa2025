@@ -507,14 +507,14 @@ const MagicBento = ({
                 <div className="text-white/70 text-xs uppercase tracking-wide">
                   Upcoming
                 </div>
-                <div className="text-white font-heading text-xl">AI with Intent</div>
-                <div className="text-white/60 text-xs">Sat, 11:00 AM · Microsoft Teams</div>
+                <div className="text-white font-heading text-xl">Byte of Fortune</div>
+                <div className="text-white/60 text-xs">Tue, 16:00 PM · M312 & M313</div>
                 <p className="text-white/70 text-sm p-1 line-clamp-3  mt-2 max-w-[240px]">
-                  Discover how Generative AI, LLMs, and real-world applications are reshaping industries and careers in this exclusive session with Laxmikant Tiwari, IIT Kharagpur alumnus and AI expert with 6+ years of experience.
+                 Byte of Fortune is a coding showdown where every spin and flip shapes your destiny — solve, strategize, and outsmart to claim victory.
                 </p>
               </div>
               <a
-                href="https://forms.gle/vwrFZ2TM6qLDkPPJ7"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdjXxFknibTxHg2nNzpsZStyssXO9YlLYZ7t33Z3PYlzPh9zg/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0 rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition"
