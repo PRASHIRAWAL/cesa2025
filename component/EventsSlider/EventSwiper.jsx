@@ -214,7 +214,7 @@ export default function EventSwiper({ events = defaultEvents }) {
                 <div className="pt-6 flex gap-4">
                   {(active?.title?.toLowerCase().includes('ai') || active?.image?.toLowerCase().includes('aiintent')) && (
                     <a
-                      href="https://forms.gle/vwrFZ2TM6qLDkPPJ7"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdjXxFknibTxHg2nNzpsZStyssXO9YlLYZ7t33Z3PYlzPh9zg/viewform"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="rounded-xl bg-[#1C1528] border border-[#CF9EFF]/30 px-5 py-2 text-sm md:text-base hover:bg-[#261a36] hover:border-[#CF9EFF]/60 hover:text-[#CF9EFF] transition-all duration-300"
