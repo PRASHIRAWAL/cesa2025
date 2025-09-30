@@ -30,11 +30,11 @@ const TimeCell = ({ value, label }) => {
 };
 
 const Upcoming = ({
-  title = "AI with Intent",
-  subtitle = "Discover Generative AI and real-world applications with industry expert Laxmikant Tiwari",
-  ctaText = "Register for AI with Intent",
-  ctaHref = "https://forms.gle/vwrFZ2TM6qLDkPPJ7",
-  target = "2025-09-27T17:00:00",
+  title = "Byte Of Fortune",
+  subtitle = "An intense coding challenge where participants race to solve problems, spin for new tasks, and strategically use Power Cards to outsmart the competition.",
+  ctaText = "Register for Byte Of Fortune",
+  ctaHref = "https://docs.google.com/forms/d/e/1FAIpQLSdjXxFknibTxHg2nNzpsZStyssXO9YlLYZ7t33Z3PYlzPh9zg/viewform",
+  target = "2025-09-30T16:00:00",
   imageSrc = "/Hand.png",
   imageAlt = "Energy hand",
 }) => {

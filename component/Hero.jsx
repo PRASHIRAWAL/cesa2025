@@ -81,10 +81,10 @@ const Hero = () => {
         <div className="mt-6 flex flex-wrap gap-4 justify-center">
           <div className="hero-button">
             <Button
-              text="View Current Event"
+              text="View Events"
               variant="primary"
               onClick={() => {
-                const el = document.getElementById('upcoming')
+                const el = document.getElementById('events')
                 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
             />
