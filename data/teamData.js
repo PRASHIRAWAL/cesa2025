@@ -1,4 +1,16 @@
 // =======================
+// Convener
+// =======================
+export const convener = {
+  name: 'Convener Name',
+  role: 'Convener',
+  image: {
+    default: '/members/convener.png',
+    hover: '/members/convener-hover.png',
+  },
+}
+
+// =======================
 // Leadership Team
 // =======================
 export const leadership = [
