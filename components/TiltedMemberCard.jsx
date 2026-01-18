@@ -5,7 +5,7 @@ import { motion, useSpring } from 'motion/react'
 import Image from 'next/image'
 import { FiGithub } from 'react-icons/fi'
 import { FaLinkedinIn } from 'react-icons/fa'
-import { PiHandTap } from "react-icons/pi";
+import { PiHandTap } from 'react-icons/pi'
 
 const springValues = {
   damping: 30,
@@ -16,7 +16,7 @@ const springValues = {
 export default function TiltedMemberCard({ name, role, image, links }) {
   const ref = useRef(null)
 
-  const [isHovered, setIsHovered] = useState(false)
+  const [isActive, setIsActive] = useState(false) // unified hover/tap state
   const [showTapHint, setShowTapHint] = useState(false)
   const [canHover, setCanHover] = useState(true)
 
@@ -30,15 +30,15 @@ export default function TiltedMemberCard({ name, role, image, links }) {
     setCanHover(hoverCapable)
 
     if (!hoverCapable) {
-      const tappedBefore =
-        localStorage.getItem('member-card-tapped') === 'true'
+      const tappedBefore = localStorage.getItem('member-card-tapped')
 
       if (!tappedBefore) {
         setShowTapHint(true)
 
         const timer = setTimeout(() => {
           setShowTapHint(false)
-        }, 10000)
+          localStorage.setItem('member-card-tapped', 'true')
+        }, 15000) // ⏱️ 15 seconds
 
         return () => clearTimeout(timer)
       }
@@ -59,13 +59,13 @@ export default function TiltedMemberCard({ name, role, image, links }) {
 
   function handleMouseEnter() {
     if (!canHover) return
-    setIsHovered(true)
+    setIsActive(true)
     scale.set(1.06)
   }
 
   function handleMouseLeave() {
     if (!canHover) return
-    setIsHovered(false)
+    setIsActive(false)
     scale.set(1)
     rotateX.set(0)
     rotateY.set(0)
@@ -75,34 +75,35 @@ export default function TiltedMemberCard({ name, role, image, links }) {
   function handleTap() {
     if (canHover) return
 
-    // Permanently disable tap hint
-    if (showTapHint) {
-      localStorage.setItem('member-card-tapped', 'true')
-      setShowTapHint(false)
-    }
-
-    setIsHovered(prev => !prev)
-    scale.set(isHovered ? 1 : 1.05)
+    setIsActive(prev => {
+      const next = !prev
+      scale.set(next ? 1.05 : 1)
+      return next
+    })
   }
 
   return (
     <figure
       ref={ref}
-      className="[perspective:900px] relative"
+      className="[perspective:900px] relative select-none"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleTap}
     >
-      {/* 📱 TAP HINT — ONE TIME ONLY */}
+      {/* 📱 TAP HINT — BLINKS FOR 15s */}
       {!canHover && showTapHint && (
         <motion.div
-          className="absolute top-4 right-4 z-50 text-xs text-white/70 pointer-events-none"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0, 1, 0] }}
-          transition={{ duration: 3, ease: 'easeInOut' }}
+          className="absolute top-4 right-4 z-50 flex items-center gap-1 text-xs text-white/70 pointer-events-none"
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{
+            duration: 1.2,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
         >
-          <PiHandTap size={15} className='text-white/70'/> Tap
+          <PiHandTap size={15} />
+          Tap
         </motion.div>
       )}
 
@@ -116,7 +117,7 @@ export default function TiltedMemberCard({ name, role, image, links }) {
         <div
           className="pointer-events-none absolute inset-0 rounded-3xl transition-opacity duration-300"
           style={{
-            boxShadow: isHovered
+            boxShadow: isActive
               ? `
                 inset 0 0 0 1px rgba(190,140,255,0.65),
                 0 0 25px rgba(190,140,255,0.45),
@@ -144,8 +145,8 @@ export default function TiltedMemberCard({ name, role, image, links }) {
             <motion.div
               className="absolute bottom-0"
               animate={{
-                opacity: isHovered ? 0 : 1,
-                scale: isHovered ? 1.05 : 1,
+                opacity: isActive ? 0 : 1,
+                scale: isActive ? 1.05 : 1,
               }}
               transition={{ duration: 0.3 }}
             >
@@ -165,8 +166,8 @@ export default function TiltedMemberCard({ name, role, image, links }) {
               className="absolute bottom-0"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{
-                opacity: isHovered ? 1 : 0,
-                scale: isHovered ? 1 : 0.95,
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95,
               }}
               transition={{ duration: 0.3 }}
             >
