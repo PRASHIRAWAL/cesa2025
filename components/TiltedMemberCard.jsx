@@ -5,6 +5,7 @@ import { motion, useSpring } from 'motion/react'
 import Image from 'next/image'
 import { FiGithub } from 'react-icons/fi'
 import { FaLinkedinIn } from 'react-icons/fa'
+import { PiHandTap } from "react-icons/pi";
 
 const springValues = {
   damping: 30,
@@ -37,7 +38,7 @@ export default function TiltedMemberCard({ name, role, image, links }) {
 
         const timer = setTimeout(() => {
           setShowTapHint(false)
-        }, 3000)
+        }, 10000)
 
         return () => clearTimeout(timer)
       }
@@ -101,7 +102,7 @@ export default function TiltedMemberCard({ name, role, image, links }) {
           animate={{ opacity: [0, 1, 0, 1, 0] }}
           transition={{ duration: 3, ease: 'easeInOut' }}
         >
-          👆 Tap
+          <PiHandTap size={15} className='text-white/70'/> Tap
         </motion.div>
       )}
 
