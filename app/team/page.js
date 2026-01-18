@@ -27,7 +27,7 @@ export default function TeamPage() {
         </div>
 
         {/* Leadership */}
-        <div className="grid md:grid-cols-3 gap-12 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24 justify-items-center">
           {leadership.map((member) => (
             <TiltedMemberCard
               key={member.name}

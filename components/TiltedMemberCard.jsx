@@ -1,7 +1,10 @@
 'use client'
+
 import { useRef, useState, useEffect } from 'react'
 import { motion, useSpring } from 'motion/react'
 import Image from 'next/image'
+import { FiGithub } from 'react-icons/fi'
+import { FaLinkedinIn } from 'react-icons/fa'
 
 const springValues = {
   damping: 30,
@@ -9,32 +12,37 @@ const springValues = {
   mass: 1.8,
 }
 
-export default function TiltedMemberCard({ name, role, image }) {
+export default function TiltedMemberCard({ name, role, image, links }) {
   const ref = useRef(null)
 
   const [isHovered, setIsHovered] = useState(false)
   const [showTapHint, setShowTapHint] = useState(false)
+  const [canHover, setCanHover] = useState(true)
 
   const rotateX = useSpring(0, springValues)
   const rotateY = useSpring(0, springValues)
   const scale = useSpring(1, springValues)
 
-  const canHover =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(hover: hover)').matches
-
-  /* ---------------- MOBILE TAP HINT ---------------- */
+  /* ---------------- DEVICE DETECTION ---------------- */
   useEffect(() => {
-    if (!canHover) {
-      setShowTapHint(true)
+    const hoverCapable = window.matchMedia('(hover: hover)').matches
+    setCanHover(hoverCapable)
 
-      const timer = setTimeout(() => {
-        setShowTapHint(false)
-      }, 3000)
+    if (!hoverCapable) {
+      const tappedBefore =
+        localStorage.getItem('member-card-tapped') === 'true'
 
-      return () => clearTimeout(timer)
+      if (!tappedBefore) {
+        setShowTapHint(true)
+
+        const timer = setTimeout(() => {
+          setShowTapHint(false)
+        }, 3000)
+
+        return () => clearTimeout(timer)
+      }
     }
-  }, [canHover])
+  }, [])
 
   /* ---------------- DESKTOP TILT ---------------- */
   function handleMouseMove(e) {
@@ -65,6 +73,13 @@ export default function TiltedMemberCard({ name, role, image }) {
   /* ---------------- MOBILE TAP ---------------- */
   function handleTap() {
     if (canHover) return
+
+    // Permanently disable tap hint
+    if (showTapHint) {
+      localStorage.setItem('member-card-tapped', 'true')
+      setShowTapHint(false)
+    }
+
     setIsHovered(prev => !prev)
     scale.set(isHovered ? 1 : 1.05)
   }
@@ -72,19 +87,31 @@ export default function TiltedMemberCard({ name, role, image }) {
   return (
     <figure
       ref={ref}
-      className="[perspective:900px]"
+      className="[perspective:900px] relative"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleTap}
     >
+      {/* 📱 TAP HINT — ONE TIME ONLY */}
+      {!canHover && showTapHint && (
+        <motion.div
+          className="absolute top-4 right-4 z-50 text-xs text-white/70 pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 0, 1, 0] }}
+          transition={{ duration: 3, ease: 'easeInOut' }}
+        >
+          👆 Tap
+        </motion.div>
+      )}
+
       <motion.div
         className="relative w-[280px] h-[400px] rounded-3xl overflow-hidden
         bg-[linear-gradient(135deg,#0C0414_0%,#1A1025_100%)]
         [transform-style:preserve-3d]"
         style={{ rotateX, rotateY, scale }}
       >
-        {/* ✨ STRONGER BORDER GLOW */}
+        {/* ✨ BORDER GLOW */}
         <div
           className="pointer-events-none absolute inset-0 rounded-3xl transition-opacity duration-300"
           style={{
@@ -101,23 +128,6 @@ export default function TiltedMemberCard({ name, role, image }) {
           }}
         />
 
-        {/* 📱 TAP HINT */}
-        {!canHover && showTapHint && (
-          <motion.div
-            className="absolute top-4 right-4 z-30 text-xs text-white/70"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: [0, 1, 0, 1, 0],
-            }}
-            transition={{
-              duration: 3,
-              ease: 'easeInOut',
-            }}
-          >
-            Tap
-          </motion.div>
-        )}
-
         {/* Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="flex flex-col items-center text-[3.4rem] font-extrabold text-white/10 gap-1">
@@ -127,7 +137,7 @@ export default function TiltedMemberCard({ name, role, image }) {
           </div>
         </div>
 
-        {/* Image Layer */}
+        {/* Images */}
         <div className="absolute inset-0 flex items-end justify-center z-10">
           {image?.default && (
             <motion.div
@@ -170,20 +180,23 @@ export default function TiltedMemberCard({ name, role, image }) {
           )}
         </div>
 
-        {/* Bottom Content */}
+        {/* Text */}
         <div className="absolute bottom-0 w-full px-6 pb-6 z-20 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-          <h2
-            className={`text-white text-3xl font-extrabold transition-all ${
-              isHovered ? 'tracking-wide' : ''
-            }`}
-          >
-            {name}
-          </h2>
+          <h2 className="text-white text-3xl font-extrabold">{name}</h2>
+          <p className="text-white/80 text-sm font-medium">{role}</p>
+        </div>
 
-          <div className="flex items-center gap-2 mt-1">
-            <span className="w-1.5 h-1.5 bg-white rounded-full" />
-            <p className="text-white/80 text-sm font-medium">{role}</p>
-          </div>
+        {/* Socials */}
+        <div
+          className="absolute bottom-2 right-2 z-30 flex"
+          onClick={e => e.stopPropagation()}
+        >
+          <a href={links?.linkedin} target="_blank" rel="noopener noreferrer">
+            <FaLinkedinIn className="text-white/70 hover:text-white m-2" size={15} />
+          </a>
+          <a href={links?.github} target="_blank" rel="noopener noreferrer">
+            <FiGithub className="text-white/70 hover:text-white m-2" size={15} />
+          </a>
         </div>
       </motion.div>
     </figure>
