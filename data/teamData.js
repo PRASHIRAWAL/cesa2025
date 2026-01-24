@@ -66,7 +66,7 @@ export const domains = [
       {
         name: 'Prashi Rawal',
         role: 'Technical Head',
-        image: {
+        image: { 
           default: '/members/prashi.png',
           hover: '/members/prashi-hover.png',
         },
