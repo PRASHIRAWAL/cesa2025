@@ -121,27 +121,16 @@ export default function Navbar() {
 
             {/* Links */}
             <div className="flex gap-10 text-white items-center">
-              {navLinks.map((link) =>
-                link.href.startsWith("#") ? (
-                  <button
-                    key={link.name}
-                    onClick={() => router.push(`/${link.href}`)}
-                    className="text-2xl text-white/80 hover:text-[#CF9EFF] transition relative group"
-                  >
-                    {link.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#CF9EFF] to-[#A855F7] group-hover:w-full transition-all duration-300" />
-                  </button>
-                ) : (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-2xl text-white/80 hover:text-[#CF9EFF] transition relative group"
-                  >
-                    {link.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#CF9EFF] to-[#A855F7] group-hover:w-full transition-all duration-300" />
-                  </Link>
-                )
-              )}
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href.startsWith("#") ? `/${link.href}` : link.href}
+                  className="text-2xl text-white/80  hover:text-[#CF9EFF] transition relative group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#CF9EFF] to-[#A855F7] group-hover:w-full transition-all duration-300" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

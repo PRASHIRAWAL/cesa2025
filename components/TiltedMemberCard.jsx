@@ -17,7 +17,6 @@ export default function TiltedMemberCard({ name, role, image, links }) {
   const ref = useRef(null)
 
   const [isActive, setIsActive] = useState(false) // unified hover/tap state
-  const [showTapHint, setShowTapHint] = useState(false)
   const [canHover, setCanHover] = useState(true)
 
   const rotateX = useSpring(0, springValues)
@@ -28,21 +27,6 @@ export default function TiltedMemberCard({ name, role, image, links }) {
   useEffect(() => {
     const hoverCapable = window.matchMedia('(hover: hover)').matches
     setCanHover(hoverCapable)
-
-    if (!hoverCapable) {
-      const tappedBefore = localStorage.getItem('member-card-tapped')
-
-      if (!tappedBefore) {
-        setShowTapHint(true)
-
-        const timer = setTimeout(() => {
-          setShowTapHint(false)
-          localStorage.setItem('member-card-tapped', 'true')
-        }, 15000) // ⏱️ 15 seconds
-
-        return () => clearTimeout(timer)
-      }
-    }
   }, [])
 
   /* ---------------- DESKTOP TILT ---------------- */
@@ -91,8 +75,8 @@ export default function TiltedMemberCard({ name, role, image, links }) {
       onMouseLeave={handleMouseLeave}
       onClick={handleTap}
     >
-      {/* 📱 TAP HINT — BLINKS FOR 15s */}
-      {!canHover && showTapHint && (
+      {/* 📱 TAP HINT — ALWAYS VISIBLE ON MOBILE */}
+      {!canHover && (
         <motion.div
           className="absolute top-4 right-4 z-50 flex items-center gap-1 text-xs text-white/70 pointer-events-none"
           animate={{ opacity: [0, 1, 0] }}
