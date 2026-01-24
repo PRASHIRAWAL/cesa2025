@@ -155,7 +155,7 @@ export default function TiltedMemberCard({ name, role, image, links }) {
                 alt={name}
                 width={280}
                 height={360}
-                className="h-[90%] w-auto object-contain border"
+                className="h-[90%] w-auto object-contain "
                 priority
               />
             </motion.div>

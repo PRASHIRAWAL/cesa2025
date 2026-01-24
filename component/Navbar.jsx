@@ -2,19 +2,21 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 
-const mobileNavLinks = [
+const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About Us", href: "#about" },
   { name: "Events", href: "#events" },
   { name: "Team", href: "/team" },
 ];
 
-export const Navbar = () => {
+export default function Navbar() {
   const router = useRouter();
 
+  /* ---------------- MOBILE STATE ---------------- */
   const [isOpen, setIsOpen] = useState(false);
   const [showBurger, setShowBurger] = useState(true);
 
@@ -23,18 +25,24 @@ export const Navbar = () => {
   const topLine = useRef(null);
   const bottomLine = useRef(null);
 
-  const tl = useRef(null);
+  const drawerTl = useRef(null);
   const iconTl = useRef(null);
-  /* Drawer animation */
+
+  /* ---------------- DESKTOP STATE ---------------- */
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  /* ---------------- MOBILE GSAP ---------------- */
   useEffect(() => {
+    if (!navRef.current) return;
+
     gsap.set(navRef.current, { xPercent: 100 });
     gsap.set(linksRef.current, { autoAlpha: 0, x: -20 });
 
-    tl.current = gsap
+    drawerTl.current = gsap
       .timeline({ paused: true })
       .to(navRef.current, {
         xPercent: 0,
-        duration: 0.9,
+        duration: 0.8,
         ease: "power3.out",
       })
       .to(
@@ -43,7 +51,7 @@ export const Navbar = () => {
           autoAlpha: 1,
           x: 0,
           stagger: 0.12,
-          duration: 0.4,
+          duration: 0.35,
           ease: "power2.out",
         },
         "<"
@@ -55,24 +63,27 @@ export const Navbar = () => {
       .to(bottomLine.current, { rotate: -45, y: -4 }, "<");
   }, []);
 
-  /* Auto hide burger */
+  /* ---------------- BURGER AUTO HIDE ---------------- */
   useEffect(() => {
     let last = window.scrollY;
     const onScroll = () => {
       const curr = window.scrollY;
       setShowBurger(curr <= last || curr < 20);
       last = curr;
+      setIsScrolled(curr > 100);
     };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const toggle = () => {
+  /* ---------------- ACTIONS ---------------- */
+  const toggleMobile = () => {
     if (isOpen) {
-      tl.current?.reverse();
+      drawerTl.current?.reverse();
       iconTl.current?.reverse();
     } else {
-      tl.current?.play();
+      drawerTl.current?.play();
       iconTl.current?.play();
     }
     setIsOpen(!isOpen);
@@ -84,12 +95,59 @@ export const Navbar = () => {
     } else {
       router.push(href);
     }
-    toggle();
+    if (isOpen) toggleMobile();
   };
 
   return (
     <>
-      {/* FULLSCREEN DRAWER */}
+      {/* ================= DESKTOP NAVBAR ================= */}
+      <nav
+        className={`hidden md:block fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? "bg-black/90 backdrop-blur-md" : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-[85vw] mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/LogoCesa.png"
+                width={140}
+                height={140}
+                alt="CESA Logo"
+                priority
+              />
+            </Link>
+
+            {/* Links */}
+            <div className="flex gap-10 text-white items-center">
+              {navLinks.map((link) =>
+                link.href.startsWith("#") ? (
+                  <button
+                    key={link.name}
+                    onClick={() => router.push(`/${link.href}`)}
+                    className="text-2xl text-white/80 hover:text-[#CF9EFF] transition relative group"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#CF9EFF] to-[#A855F7] group-hover:w-full transition-all duration-300" />
+                  </button>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-2xl text-white/80 hover:text-[#CF9EFF] transition relative group"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#CF9EFF] to-[#A855F7] group-hover:w-full transition-all duration-300" />
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* ================= MOBILE DRAWER ================= */}
       <nav
         ref={navRef}
         className="md:hidden fixed inset-0 z-40 bg-black text-white px-8 py-28 flex flex-col justify-between"
@@ -103,14 +161,11 @@ export const Navbar = () => {
         />
 
         <div className="flex flex-col gap-8 text-4xl font-semibold">
-          {mobileNavLinks.map((link, i) => (
-            <div
-              key={link.name}
-              ref={(el) => (linksRef.current[i] = el)}
-            >
+          {navLinks.map((link, i) => (
+            <div key={link.name} ref={(el) => (linksRef.current[i] = el)}>
               <button
                 onClick={() => navigate(link.href)}
-                className="hover:text-[#CF9EFF] transition cursor-pointer hover:bg-[#CF9EFF]/20 p-2 rounded-xl w-full text-left"
+                className="hover:text-[#CF9EFF] hover:bg-[#CF9EFF]/20 p-2 rounded-xl w-full text-left transition"
               >
                 {link.name}
               </button>
@@ -123,10 +178,10 @@ export const Navbar = () => {
         </p>
       </nav>
 
-      {/* FLOATING BURGER */}
+      {/* ================= BURGER BUTTON ================= */}
       <button
-        onClick={toggle}
-        className="md:hidden fixed z-50 top-6 right-6 w-14 h-14 rounded-full  flex items-center justify-center"
+        onClick={toggleMobile}
+        className="md:hidden fixed z-50 top-6 right-6 w-14 h-14 rounded-full flex items-center justify-center"
         style={{
           clipPath: showBurger
             ? "circle(50% at 50% 50%)"
@@ -140,4 +195,4 @@ export const Navbar = () => {
       </button>
     </>
   );
-};
+}

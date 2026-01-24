@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono, Russo_One, Space_Grotesk, MuseoModerno, Teko } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/component/Navbar";
+import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import Preloader from "@/component/Preloader";
 
