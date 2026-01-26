@@ -1,10 +1,11 @@
+import EventSwiper from '@/component/EventsSlider/EventSwiper'
 import Upcoming from '@/component/Upcoming'
 import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
   return (
-    <div className="relative">
+    <div className="relative min-h-screen bg-[#0A0711] py-10 pt-20">
       <Link 
         href="/"
         className="fixed top-6 left-6 z-50 rounded-xl bg-[#12091d] border border-[#392e4e] px-4 py-2 text-sm text-white/80 hover:bg-[#1e0f2b] hover:text-white transition flex items-center gap-2"
@@ -12,6 +13,7 @@ const page = () => {
         ← Back to Home
       </Link>
       <Upcoming/>
+      <EventSwiper/>
     </div>
   )
 }
