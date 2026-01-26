@@ -22,9 +22,9 @@ export default function TeamPage() {
         </motion.div>
 
         {/* Convener */}
-        <div className="flex justify-center mb-20">
+        {/* <div className="flex justify-center mb-20">
           <TiltedMemberCard {...convener} />
-        </div>
+        </div> */}
 
         {/* Leadership */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24 justify-items-center">

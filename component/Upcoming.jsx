@@ -49,7 +49,7 @@ const Upcoming = ({
   }, [targetDate]);
 
   return (
-    <section id="upcoming"  className="w-full bg-[#0A0711]">
+    <section id="upcoming" className="w-full bg-[#0A0711] scroll-mt-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text and countdown */}

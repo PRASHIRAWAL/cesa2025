@@ -17,26 +17,16 @@ const defaultEvents = [
     location: "VIT L06",
     image: "/Poster/agentx.jpeg",
     description:
-      `AgentX Summit is an in-depth, hands-on learning experience focused on building intelligent AI agents powered by Large Language Models. The workshop walks participants through the complete journey from understanding agentic AI concepts to implementing real-world automation using LangChain, APIs, tools, and memory.
-
-Explore how AI agents go beyond generative models by reasoning, planning, and acting with tools & data.
+      `Hands-on workshop on building AI agents powered by LLMs using LangChain, APIs, tools, and memory.
 
 What You'll Master:
 - Build AI agents from scratch
 - Use APIs & memory for intelligent automation
-- Automate real-world tasks with practical applications
+- Automate real-world tasks
 
-Led by Laxmi Kant Tiwari, Co-founder of MBreath, IIT Kharagpur alumnus, and Data Science Manager at IGP, with 6+ years of expertise in AI and Data Science. The session combines live demonstrations, guided practice, and mentorship, helping attendees gain practical, industry-relevant skills and a resume-ready project that showcases their ability to design and deploy AI agents.
+Led by Laxmi Kant Tiwari (Co-founder MBreath, IIT Kharagpur, Data Science Manager at IGP). Get certificate, resume-ready project, 1:1 mentorship, and hands-on learning.
 
-Benefits:
-- Certificate of completion
-- Resume-ready project
-- 1:1 Mentorship
-- Live hands-on learning
-
-Contact:
-- Bhavika Yashwantrao: 8591097092
-- Tejas Dhanvi: 7738794631`,
+Contact: Bhavika (8591097092) | Tejas (7738794631)`,
   },
      {
      id: 3,
@@ -183,7 +173,7 @@ export default function EventSwiper({ events = defaultEvents }) {
                 alt={ev.title}
                 height={900}
                 width={700}
-                className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 priority={ev.id === 1}
               />
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -202,17 +192,18 @@ export default function EventSwiper({ events = defaultEvents }) {
 
           {/* Content box */}
           <div className="relative z-[61] w-[95%] md:w-[80%] lg:w-[70%] 
+                          max-h-[90vh]
                           rounded-3xl border-2 border-[#CF9EFF] 
                           bg-[#0C0414] text-white 
-                          overflow-y-auto max-h-[90vh]"
+                          overflow-hidden"
                style={{
                  boxShadow: '0 0 25px rgba(207, 158, 255, 0.2), 0 0 50px rgba(207, 158, 255, 0.1)',
                  filter: 'drop-shadow(0 0 15px rgba(207, 158, 255, 0.25))',
                  WebkitOverflowScrolling: 'touch'
                }}>
-            <div className="flex flex-col md:flex-row h-full">
+            <div className="flex flex-col md:flex-row max-h-[90vh]">
               {/* Poster Left */}
-              <div className="relative w-full md:w-1/2 flex items-center justify-center 
+              <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto flex items-center justify-center 
                               bg-[#0b0613] p-3 md:p-5 
                               shadow-[inset_0_0_40px_rgba(207,158,255,0.2)]">
                 <Image
@@ -220,7 +211,7 @@ export default function EventSwiper({ events = defaultEvents }) {
                   alt={active.title}
                   width={1280}
                   height={720}
-                  className="w-full h-auto max-h-[60vh] md:max-h-[80vh] object-contain rounded-xl"
+                  className="w-full h-full object-contain rounded-xl"
                 />
                 <button
                   onClick={() => setActive(null)}
@@ -241,9 +232,9 @@ export default function EventSwiper({ events = defaultEvents }) {
                   {renderDescription(active.description)}
                 </div>
                 <div className="pt-6 flex gap-4">
-                  {(active?.title?.toLowerCase().includes('ai') || active?.image?.toLowerCase().includes('aiintent')) && (
+                  {(active?.title?.toLowerCase().includes('agentx') || active?.title?.toLowerCase().includes('ai') || active?.image?.toLowerCase().includes('aiintent') || active?.image?.toLowerCase().includes('agentx')) && (
                     <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSdjXxFknibTxHg2nNzpsZStyssXO9YlLYZ7t33Z3PYlzPh9zg/viewform"
+                      href="https://forms.gle/rcxuDay4gmfJx5vi7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="rounded-xl bg-[#1C1528] border border-[#CF9EFF]/30 px-5 py-2 text-sm md:text-base hover:bg-[#261a36] hover:border-[#CF9EFF]/60 hover:text-[#CF9EFF] transition-all duration-300"
