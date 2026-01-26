@@ -507,14 +507,14 @@ const MagicBento = ({
                 <div className="text-white/70 text-xs uppercase tracking-wide">
                   Upcoming
                 </div>
-                <div className="text-white font-heading text-xl">Byte of Fortune</div>
-                <div className="text-white/60 text-xs">Tue, 16:00 PM · M312 & M313</div>
+                <div className="text-white font-heading text-xl">AgentX Summit</div>
+                <div className="text-white/60 text-xs">Jan 28, 4:00 PM - 6:30 PM · VIT L06</div>
                 <p className="text-white/70 text-sm p-1 line-clamp-3  mt-2 max-w-[240px]">
-                 Byte of Fortune is a coding showdown where every spin and flip shapes your destiny — solve, strategize, and outsmart to claim victory.
+                  Hands-on workshop on building AI agents with LangChain. Learn to create intelligent automation using APIs, tools, and memory with expert mentorship.
                 </p>
               </div>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdjXxFknibTxHg2nNzpsZStyssXO9YlLYZ7t33Z3PYlzPh9zg/viewform"
+                href="https://forms.gle/rcxuDay4gmfJx5vi7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0 rounded-xl bg-[#12091d] border border-[#392e4e] px-3 py-2 text-xs text-white/80 hover:bg-[#1e0f2b] transition"

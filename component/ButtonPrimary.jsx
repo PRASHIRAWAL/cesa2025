@@ -11,13 +11,13 @@ const Button = ({ text, route, variant = "primary", ...props }) => {
       text-white border border-[#A78BFA]/30 
       hover:from-[#2A1F3D] hover:to-[#3B1E65] 
       shadow-lg hover:shadow-purple-500/30 
-      focus:ring-purple-500
+      focus:ring-purple-500 cursor-pointer
     `,
     secondary: `
       bg-[#2A1F3D] text-white border border-[#A78BFA]/30 
       hover:bg-[#3B1E65] hover:border-[#C4B5FD] 
       shadow-md hover:shadow-purple-400/20 
-      focus:ring-purple-500
+      focus:ring-purple-500 cursor-pointer
     `,
   };
 

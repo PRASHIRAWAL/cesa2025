@@ -26,8 +26,8 @@ export const leadership = [
       hover: '/members/tanisha-hover.png',
     },
     links: {
-      linkedin: 'https://linkedin.com/in/tanisha-sharma',
-      github: 'https://github.com/tanisha-sharma',
+      linkedin: 'www.linkedin.com/in/tanisha-sharma-776a49298',
+      github: 'https://github.com/tanishasharma1827',
     },
   },
   {
@@ -38,8 +38,8 @@ export const leadership = [
       hover: '/members/swaroop-hover.png',
     },
     links: {
-      linkedin: 'https://linkedin.com/in/swaroop-naik',
-      github: 'https://github.com/swaroop-naik',
+      linkedin: 'www.linkedin.com/in/swaroop-naik-5bb172233',
+      github: 'https://github.com/Swaroop192005',
     },
   },
   {
@@ -71,8 +71,8 @@ export const domains = [
           hover: '/members/prashi-hover.png',
         },
         links: {
-          linkedin: 'https://linkedin.com/in/prashi-rawal',
-          github: 'https://github.com/prashi-rawal',
+          linkedin: 'https://www.linkedin.com/in/prashi-rawal-452baa299/',
+          github: 'https://github.com/PRASHIRAWAL',
         },
       },
     ],
@@ -85,7 +85,7 @@ export const domains = [
           hover: '/members/rohit-hover.png',
         },
         links: {
-          linkedin: 'https://linkedin.com/in/rohit-soneji',
+          linkedin: 'https://www.linkedin.com/in/rohit-soneji-9483a5344/',
           github: 'https://github.com/SwiftByte6',
         },
       },
@@ -102,8 +102,8 @@ export const domains = [
           hover: '/members/ishika-hover.png',
         },
         links: {
-          linkedin: 'https://linkedin.com/in/ishika-bhute',
-          github: 'https://github.com/ishika-bhute',
+          linkedin: 'https://www.linkedin.com/in/ishika-bhute-a72b1a32b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/ishikaa7',
         },
       },
     ],
@@ -116,8 +116,8 @@ export const domains = [
           hover: '/members/soumitra-hover.png',
         },
         links: {
-          linkedin: 'https://linkedin.com/in/soumitra-rajguru',
-          github: 'https://github.com/soumitra-rajguru',
+          linkedin: 'www.linkedin.com/in/soumitra-rajguru',
+          github: 'https://github.com/Soumitra-04',
         },
       },
     ],
@@ -133,8 +133,8 @@ export const domains = [
           hover: '/members/sudha-hover.png',
         },
         links: {
-          linkedin: 'https://linkedin.com/in/sudha-maurya',
-          github: 'https://github.com/sudha-maurya',
+          linkedin: 'https://www.linkedin.com/in/sudha-maurya-53aa35324/',
+          github: 'https://github.com/sudha2186/sudha2186',
         },
       },
     ],

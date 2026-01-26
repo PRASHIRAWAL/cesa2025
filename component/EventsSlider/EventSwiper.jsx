@@ -10,18 +10,35 @@ import "./styles.css";
 import { Pagination, Navigation } from "swiper/modules";
 
 const defaultEvents = [
-     {
-    id: 4,
-    title: "",
-    date: "Sep 27, 5:00 PM - 7.00 PM",
-    location: "Online",
-    image: "/Poster/AiIntent.jpg",
+  {
+    id: 5,
+    title: "AgentX Summit",
+    date: "Jan 28, 4:00 PM - 6:30 PM",
+    location: "VIT L06",
+    image: "/Poster/agentx.jpeg",
     description:
-      `Generative AI is revolutionizing how we create, design, and solve problems — driving smarter solutions and opening new career paths. This session will explore the future of AI, real-world applications of LLMs and NLP, and how autonomy and adaptability are reshaping industries.
+      `AgentX Summit is an in-depth, hands-on learning experience focused on building intelligent AI agents powered by Large Language Models. The workshop walks participants through the complete journey from understanding agentic AI concepts to implementing real-world automation using LangChain, APIs, tools, and memory.
 
-The talk will be led by Laxmikant Tiwari who is the Co-Founder of MBreath, IIT Kharagpur alumnus, and Senior Manager at Linedata, with 6+ years of expertise in AI and Data Science. Learn from his journey and gain insights into building impactful careers in AI.`,
+Explore how AI agents go beyond generative models by reasoning, planning, and acting with tools & data.
+
+What You'll Master:
+- Build AI agents from scratch
+- Use APIs & memory for intelligent automation
+- Automate real-world tasks with practical applications
+
+Led by Laxmi Kant Tiwari, Co-founder of MBreath, IIT Kharagpur alumnus, and Data Science Manager at IGP, with 6+ years of expertise in AI and Data Science. The session combines live demonstrations, guided practice, and mentorship, helping attendees gain practical, industry-relevant skills and a resume-ready project that showcases their ability to design and deploy AI agents.
+
+Benefits:
+- Certificate of completion
+- Resume-ready project
+- 1:1 Mentorship
+- Live hands-on learning
+
+Contact:
+- Bhavika Yashwantrao: 8591097092
+- Tejas Dhanvi: 7738794631`,
   },
-   {
+     {
      id: 3,
      title: "Byte Of Fortune",
      date: "Sep 30, 4:00 PM",
@@ -44,6 +61,18 @@ The talk will be led by Laxmikant Tiwari who is the Co-Founder of MBreath, IIT K
 
  Only correct, properly submitted solutions count toward scoring.`,
    },
+     {
+    id: 4,
+    title: "",
+    date: "Sep 27, 5:00 PM - 7.00 PM",
+    location: "Online",
+    image: "/Poster/AiIntent.jpg",
+    description:
+      `Generative AI is revolutionizing how we create, design, and solve problems — driving smarter solutions and opening new career paths. This session will explore the future of AI, real-world applications of LLMs and NLP, and how autonomy and adaptability are reshaping industries.
+
+The talk will be led by Laxmikant Tiwari who is the Co-Founder of MBreath, IIT Kharagpur alumnus, and Senior Manager at Linedata, with 6+ years of expertise in AI and Data Science. Learn from his journey and gain insights into building impactful careers in AI.`,
+  },
+
   {
     id: 1,
     title: "Hackbuilt",

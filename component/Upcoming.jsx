@@ -30,11 +30,11 @@ const TimeCell = ({ value, label }) => {
 };
 
 const Upcoming = ({
-  title = "Byte Of Fortune",
-  subtitle = "An intense coding challenge where participants race to solve problems, spin for new tasks, and strategically use Power Cards to outsmart the competition.",
-  ctaText = "Register for Byte Of Fortune",
-  ctaHref = "https://docs.google.com/forms/d/e/1FAIpQLSdjXxFknibTxHg2nNzpsZStyssXO9YlLYZ7t33Z3PYlzPh9zg/viewform",
-  target = "2025-09-30T16:00:00",
+  title = "AgentX Summit",
+  subtitle = "An in-depth, hands-on learning experience focused on building intelligent AI agents powered by Large Language Models using LangChain, APIs, tools, and memory.",
+  ctaText = "Register for AgentX Summit",
+  ctaHref = "https://forms.gle/rcxuDay4gmfJx5vi7",
+  target = "2026-01-28T16:00:00",
   imageSrc = "/Hand.png",
   imageAlt = "Energy hand",
 }) => {
@@ -49,7 +49,7 @@ const Upcoming = ({
   }, [targetDate]);
 
   return (
-    <section  className="w-full bg-[#0A0711]">
+    <section id="upcoming"  className="w-full bg-[#0A0711]">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text and countdown */}
