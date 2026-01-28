@@ -35,7 +35,7 @@ export const leadership = [
     role: 'Vice Chairperson',
     image: {
       default: '/members/swaroop.png',
-      hover: '/members/swaroop-hover.png',
+      hover: '/members/swaroop.png',
     },
     links: {
       linkedin: 'www.linkedin.com/in/swaroop-naik-5bb172233',
@@ -50,8 +50,8 @@ export const leadership = [
       hover: '/members/diksha-hover.png',
     },
     links: {
-      linkedin: 'https://linkedin.com/in/diksha-parulekar',
-      github: 'https://github.com/diksha-parulekar',
+      linkedin: 'https://www.linkedin.com/in/diksha-parulekar-a949282a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+      github: 'https://github.com/dikshaparulekar',
     },
   },
 ]
@@ -99,7 +99,7 @@ export const domains = [
         role: 'Event Head',
         image: {
           default: '/members/ishika.png',
-          hover: '/members/ishika-hover.png',
+          hover: '/members/ishika.png',
         },
         links: {
           linkedin: 'https://www.linkedin.com/in/ishika-bhute-a72b1a32b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
@@ -113,7 +113,7 @@ export const domains = [
         role: 'Event Co-head',
         image: {
           default: '/members/soumitra.png',
-          hover: '/members/soumitra-hover.png',
+          hover: '/members/soumitra.png',
         },
         links: {
           linkedin: 'www.linkedin.com/in/soumitra-rajguru',
@@ -174,8 +174,8 @@ export const domains = [
         name: 'Tejas Dhanvi',
         role: 'Publicity Co-head',
         image: {
-          default: '/members/tejas.png',
-          hover: '/members/tejas-hover.png',
+          default: '',
+          hover: '',
         },
         links: {
           linkedin: 'https://linkedin.com/in/tejas-dhanvi',
