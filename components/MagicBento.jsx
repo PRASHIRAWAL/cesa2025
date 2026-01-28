@@ -652,9 +652,9 @@ const MagicBento = ({
                 <div className="text-white/70 text-xs uppercase tracking-wide">
                   Events 
                 </div>
-                <div className="text-white text-3xl font-bold">2</div>
+                <div className="text-white text-3xl font-bold">6</div>
                 <p className="text-white/60 text-xs mt-1">
-                  Conducted by CESA this year
+                  Conducted by CESA in this tenure
                 </p>
               </div>
 
