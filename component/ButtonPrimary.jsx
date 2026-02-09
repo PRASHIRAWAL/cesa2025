@@ -19,6 +19,19 @@ const Button = ({ text, route, variant = "primary", ...props }) => {
       shadow-md hover:shadow-purple-400/20 
       focus:ring-purple-500 cursor-pointer
     `,
+    primaryBlue: `
+      bg-gradient-to-r from-[#0B1B34]/30 to-[#122B4D] 
+      text-white border border-[#60A5FA]/30 
+      hover:from-[#122B4D] hover:to-[#1B3A67]/20 
+      shadow-lg hover:shadow-blue-500/30 
+      focus:ring-blue-500 cursor-pointer
+    `,
+    secondaryBlue: `
+      bg-[#122B4D]/40 text-white border border-[#60A5FA]/30 
+      hover:bg-[#1B3A67]/40 hover:border-[#93C5FD] 
+      shadow-md hover:shadow-blue-400/20 
+      focus:ring-blue-500 cursor-pointer
+    `,
   };
 
   const buttonClass = `${baseClass} ${variants[variant]}`;

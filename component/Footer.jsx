@@ -1,9 +1,32 @@
 import React from "react";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ accent = "purple" }) => {
+  const accents = {
+    purple: {
+      border: "border-[#A78BFA]/20",
+      devGradient: "from-[#CF9EFF]/10 to-[#A855F7]/10",
+      devBorder: "border-[#CF9EFF]/30 hover:border-[#CF9EFF]",
+      devText: "text-[#CF9EFF]",
+      devBgHover: "from-[#CF9EFF]/5 to-[#A855F7]/5",
+      devShadow: "0 0 15px rgba(207, 158, 255, 0.2)",
+      devTextShadow: "0 0 10px rgba(207, 158, 255, 0.3)",
+    },
+    blue: {
+      border: "border-[#60A5FA]/20",
+      devGradient: "from-[#93C5FD]/10 to-[#60A5FA]/10",
+      devBorder: "border-[#93C5FD]/30 hover:border-[#93C5FD]",
+      devText: "text-[#93C5FD]",
+      devBgHover: "from-[#93C5FD]/5 to-[#60A5FA]/5",
+      devShadow: "0 0 15px rgba(147, 197, 253, 0.2)",
+      devTextShadow: "0 0 10px rgba(147, 197, 253, 0.3)",
+    },
+  };
+
+  const accentStyles = accents[accent] || accents.purple;
+
   return (
-    <footer className="relative w-full overflow-hidden bg-[#0A0711] border-t border-[#A78BFA]/20">
+    <footer className={`relative w-full overflow-hidden bg-[#0A0711] border-t ${accentStyles.border}`}>
       {/* Big background text */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <span className="font-heading text-[18rem] md:text-[24rem] leading-none tracking-tight text-white/5 select-none">
@@ -75,14 +98,14 @@ const Footer = () => {
             <a href="https://www.instagram.com/cesa.vit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white">Instagram</a>
             <Link 
               href="/developers" 
-              className="relative px-3 py-1 rounded-full bg-gradient-to-r from-[#CF9EFF]/10 to-[#A855F7]/10 border border-[#CF9EFF]/30 hover:border-[#CF9EFF] text-[#CF9EFF] hover:text-white transition-all duration-300 font-paragraph text-sm"
+              className={`relative px-3 py-1 rounded-full bg-gradient-to-r ${accentStyles.devGradient} border ${accentStyles.devBorder} ${accentStyles.devText} hover:text-white transition-all duration-300 font-paragraph text-sm`}
               style={{
-                boxShadow: '0 0 15px rgba(207, 158, 255, 0.2)',
-                textShadow: '0 0 10px rgba(207, 158, 255, 0.3)'
+                boxShadow: accentStyles.devShadow,
+                textShadow: accentStyles.devTextShadow
               }}
             >
               Developers
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#CF9EFF]/5 to-[#A855F7]/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+              <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${accentStyles.devBgHover} opacity-0 hover:opacity-100 transition-opacity duration-300`} />
             </Link>
           </div>
         </div>

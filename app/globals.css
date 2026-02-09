@@ -181,3 +181,17 @@ code, pre {
 body{
   overflow-x: hidden;
 }
+
+
+@keyframes team-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.team-marquee {
+  animation: team-marquee 50s linear infinite;
+}
