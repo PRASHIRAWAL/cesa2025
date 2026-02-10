@@ -7,7 +7,7 @@ const flagshipEvents = [
     time: "4:00 PM onwards",
     venue: "VIT Main Auditorium + Online Trail",
     teamSize: "2-4 members",
-    prize: "INR 30,000",
+    prize: "INR 3,000",
     poster: "/flagship/stellar.png",
     overview:
       "Stellar Quest is a high-intensity digital treasure hunt that fuses logic puzzles, network riddles, and rapid decision-making. Participants navigate multi-stage clues designed to evaluate precision, collaboration, and technical intuition under time constraints.",
@@ -16,13 +16,13 @@ const flagshipEvents = [
   },
   {
     id: "gravity-trials",
-    name: "Gravity Trials",
+    name: "Gravity Trails",
     tagline: "Engineer solutions that withstand pressure, precision, and speed.",
     date: "11 February 2026",
     time: "4:00 PM onwards",
     venue: "CESA Innovation Lab",
     teamSize: "3-5 members",
-    prize: "INR 25,000",
+    prize: "INR 3,000",
     poster: "/flagship/gravityTrails.png",
     overview:
       "Gravity Trials is a performance engineering challenge where teams prototype and validate mechanisms under strict constraints. The challenge emphasizes efficiency, stability, and rapid iteration.",
@@ -35,8 +35,7 @@ const flagshipEvents = [
     tagline: "A workshop on building real-world, production-aware AI systems.",
     date: "12 February 2026",
     time: "4:00 PM onwards",
-    venue: "VIT Seminar Hall 2",
-    teamSize: "Individual / 2 members",
+    venue: "M413",
     prize: "Certificates + Industry Mentorship",
     poster: "/flagship/Frame%20779.png",
     overview:
@@ -50,9 +49,9 @@ const flagshipEvents = [
     tagline: "Transform sharp ideas into structured, judge-ready pitches.",
     date: "14 February 2026",
     time: "4:00 PM onwards",
-    venue: "CESA Showcase Arena",
+    venue: "M314",
     teamSize: "2-4 members",
-    prize: "INR 20,000",
+    prize: "INR 3,000",
     poster: "/flagship/thinkrift.png",
     overview:
       "Think Rift is a structured ideation sprint where teams build solution narratives grounded in feasibility and impact. The focus is on clarity, innovation, and market relevance.",
