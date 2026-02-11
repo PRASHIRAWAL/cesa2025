@@ -23,9 +23,9 @@ const flagshipEvents = [
     venue: "CESA Innovation Lab",
     teamSize: "3-5 members",
     prize: "INR 3,000",
-    poster: "/flagship/gravityTrails.png",
+    poster: "/flagship/Gravity.png",
     overview:
-      "Gravity Trials is a performance engineering challenge where teams prototype and validate mechanisms under strict constraints. The challenge emphasizes efficiency, stability, and rapid iteration.",
+      "Round 1 – The Lost Signal Find your way through confusion and make your team understand you. \n Round 2 – Pulse Check When the pressure rises, only the quickest minds stay in the game. \n\n                        Round 3 – The Final Gamble Risk more, lose more—or prove you deserve the finish.",
     registerUrl:
       "https://docs.google.com/forms/d/e/1FAIpQLSfKVm5QYkoKPYubQGa3IQtvSmkXljyCrnG4bR0hGhNKH6-yAw/viewform?usp=publish-editor",
   },
